@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://chesen.dev"),
   title: {
-    default: "Mehdi Osmanoğlu — Software Engineering & CS Student",
+    default: "Mehdi Osmanoğlu — Software Engineering Student",
     template: "%s · Mehdi Osmanoğlu",
   },
   description:
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Mehdi Osmanoğlu" }],
   creator: "Mehdi Osmanoğlu",
   openGraph: {
-    title: "Mehdi Osmanoğlu — Software Engineering & CS Student",
+    title: "Mehdi Osmanoğlu — Software Engineering Student",
     description:
       "Backend, algorithms, and Web3. Dual-degree Software Engineering student.",
     url: "https://chesen.dev",

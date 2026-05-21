@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s · Mehdi Osmanoğlu",
   },
   description:
-    "Mehdi Osmanoğlu — Software Engineering & Computer Science dual-diploma student building robust backend systems, exploring algorithm design and Web3 ecosystems.",
+    "Mehdi Osmanoğlu — Software Engineering dual-diploma student building robust backend systems, exploring algorithm design and Web3 ecosystems.",
   keywords: [
     "Mehdi Osmanoğlu",
     "Chesen",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mehdi Osmanoğlu — Software Engineering & CS Student",
     description:
-      "Backend, algorithms, and Web3. Dual-degree Software Engineering & Computer Science student.",
+      "Backend, algorithms, and Web3. Dual-degree Software Engineering student.",
     url: "https://chesen.dev",
     siteName: "chesen.dev",
     type: "website",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mehdi Osmanoğlu",
     description:
-      "Backend, algorithms, and Web3. Dual-degree Software Engineering & Computer Science student.",
+      "Backend, algorithms, and Web3. Dual-degree Software Engineering student.",
   },
   icons: {
     icon: "/favicon.ico",
@@ -64,7 +64,7 @@ const personJsonLd = {
   name: "Mehdi Osmanoğlu",
   alternateName: "Chesen",
   url: "https://chesen.dev",
-  jobTitle: "Software Engineering & Computer Science Student",
+  jobTitle: "Software Engineering Student",
   description:
     "Dual-diploma student focused on backend architectures, algorithm design, and Web3 ecosystems.",
   knowsAbout: [

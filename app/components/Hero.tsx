@@ -96,12 +96,11 @@ export function Hero() {
           variants={fadeUp}
           className="mt-6 max-w-2xl text-pretty text-base text-zinc-400 sm:text-lg"
         >
-          Software Engineering &amp; Computer Science Student
-          <span className="mx-2 text-zinc-600">|</span>
-          <span className="text-zinc-300">
-            Fırat University &amp; Sam Houston State University Dual Degree
-          </span>
-        </motion.p>
+          Software Engineering Student
+        <span className="block mt-1 text-zinc-300">
+          Fırat University &amp; Sam Houston State University Dual Degree
+        </span>
+      </motion.p>
 
         <motion.p
           custom={3}
@@ -129,7 +128,7 @@ export function Hero() {
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <a
-            href="https://github.com/chesen-dev"
+            href="https://github.com/chesendev"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-5 py-2.5 text-sm font-medium text-zinc-200 transition-all hover:border-white/20 hover:bg-white/[0.05]"

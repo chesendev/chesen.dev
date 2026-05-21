@@ -6,7 +6,7 @@ import { useState } from "react";
 import { GithubIcon, LinkedinIcon } from "./icons";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
-const EMAIL = "hello@chesen.dev";
+const EMAIL = "mehdiosmanoglu@icloud.com";
 
 const socials = [
   {

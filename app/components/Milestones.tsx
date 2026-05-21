@@ -25,7 +25,7 @@ const milestones: Milestone[] = [
     id: "dual-diploma",
     category: "Academic",
     icon: GraduationCap,
-    title: "Software Engineering & Computer Science Dual Diploma",
+    title: "Software Engineering Dual Diploma",
     detail:
       "Joint program between Fırat University and Sam Houston State University — rigorous CS theory combined with U.S. curriculum coursework.",
     year: "Now",

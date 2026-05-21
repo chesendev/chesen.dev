@@ -7,7 +7,8 @@
   --color-border: rgba(255, 255, 255, 0.08);
   --color-surface: #18181b;
   --color-surface-2: #27272a;
-  /* Modern orange — premium tech feel on dark */
+
+  /* Default theme = Modern Orange */
   --color-accent: #fb923c; /* orange-400 */
   --color-accent-dim: rgba(251, 146, 60, 0.15);
 
@@ -15,6 +16,28 @@
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
     Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Theme-aware tokens — overridable per [data-theme] */
+:root {
+  --accent-rgb: 251, 146, 60;       /* orange-400 */
+  --accent-via: #fdba74;            /* orange-300 */
+  --accent-to: #fde68a;             /* amber-200 */
+  --progress-from: #f97316;         /* orange-500 */
+  --progress-via: #fbbf24;          /* amber-400 */
+  --progress-to: #f97316;           /* orange-500 */
+}
+
+/* Altın sarısı palette */
+[data-theme="gold"] {
+  --color-accent: #fbbf24;          /* amber-400 */
+  --color-accent-dim: rgba(251, 191, 36, 0.15);
+  --accent-rgb: 251, 191, 36;
+  --accent-via: #fcd34d;            /* amber-300 */
+  --accent-to: #fef08a;             /* yellow-200 */
+  --progress-from: #eab308;         /* yellow-500 */
+  --progress-via: #fde047;          /* yellow-300 */
+  --progress-to: #eab308;           /* yellow-500 */
 }
 
 html {
@@ -46,4 +69,12 @@ body {
     #000 30%,
     transparent 80%
   );
+}
+
+/* Smooth transitions when swapping themes */
+[data-theme],
+:root {
+  transition: --color-accent 200ms ease,
+              --accent-via 200ms ease,
+              --accent-to 200ms ease;
 }

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { href: "#skills", label: "Skills" },
@@ -58,15 +59,18 @@ export function Nav() {
           ))}
         </ul>
 
-        <a
-          href="https://github.com/chesendev"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden rounded-full bg-white/[0.04] px-3 py-1.5 text-sm font-medium text-zinc-200 transition-colors hover:bg-white/[0.08] sm:inline-block"
-        >
-          GitHub
-          <span className="ml-1 text-zinc-500">↗</span>
-        </a>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <a
+            href="https://github.com/chesendev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-full bg-white/[0.04] px-3 py-1.5 text-sm font-medium text-zinc-200 transition-colors hover:bg-white/[0.08] sm:inline-block"
+          >
+            GitHub
+            <span className="ml-1 text-zinc-500">↗</span>
+          </a>
+        </div>
       </nav>
     </motion.header>
   );

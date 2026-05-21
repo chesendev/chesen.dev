@@ -100,7 +100,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Restore theme before paint to avoid FOUC */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('theme');if(t==='gold')document.documentElement.dataset.theme='gold';}catch(e){}`,
+          }}
+        />
+      </head>
       <body
         className="min-h-screen bg-background text-foreground antialiased"
         suppressHydrationWarning

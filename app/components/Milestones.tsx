@@ -125,7 +125,7 @@ export function Milestones() {
                     className="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity group-hover:opacity-100"
                     style={{
                       background:
-                        "linear-gradient(135deg, rgba(251,146,60,0.07), transparent 50%)",
+                        "linear-gradient(135deg, rgba(var(--accent-rgb),0.08), transparent 50%)",
                     }}
                   />
                   <div className="relative">

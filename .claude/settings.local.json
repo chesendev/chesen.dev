@@ -4,7 +4,9 @@
       "Bash(xargs grep -l -i \"output.*export\\\\|static.*export\")",
       "Bash(npm install *)",
       "Bash(npm list *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue | Select-Object -Property LocalPort, OwningProcess, @{Name='ProcessName';Expression={\\(Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue\\).Name}})",
+      "PowerShell(Stop-Process -Id 3552,23684,5984,21856,14280 -Force -ErrorAction SilentlyContinue)"
     ]
   }
 }

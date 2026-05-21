@@ -7,8 +7,9 @@
   --color-border: rgba(255, 255, 255, 0.08);
   --color-surface: #18181b;
   --color-surface-2: #27272a;
-  --color-accent: #22ee88;
-  --color-accent-dim: rgba(34, 238, 136, 0.15);
+  /* Modern orange — premium tech feel on dark */
+  --color-accent: #fb923c; /* orange-400 */
+  --color-accent-dim: rgba(251, 146, 60, 0.15);
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;

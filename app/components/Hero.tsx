@@ -48,7 +48,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 -z-10 opacity-60 mix-blend-screen"
         style={{
           background:
-            "radial-gradient(420px circle at var(--mx) var(--my), rgba(34, 238, 136, 0.18), transparent 60%)",
+            "radial-gradient(420px circle at var(--mx) var(--my), rgba(251, 146, 60, 0.20), transparent 60%)",
         }}
       />
 
@@ -84,7 +84,7 @@ export function Hero() {
           className="text-balance text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl md:text-6xl lg:text-7xl"
         >
           Mehdi{" "}
-          <span className="bg-gradient-to-r from-accent via-emerald-300 to-cyan-300 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-accent via-orange-300 to-amber-200 bg-clip-text text-transparent">
             Osmanoğlu
           </span>
         </motion.h1>

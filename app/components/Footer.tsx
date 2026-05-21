@@ -16,16 +16,23 @@ const socials = [
     label: "GitHub",
     href: "https://github.com/chesendev",
     icon: GithubIcon,
+    iconClass: "text-zinc-400 group-hover:text-accent",
+    hoverClass: "hover:border-accent/40 hover:bg-zinc-900",
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/mehdiosmanoglu",
     icon: LinkedinIcon,
+    iconClass: "text-zinc-400 group-hover:text-accent",
+    hoverClass: "hover:border-accent/40 hover:bg-zinc-900",
   },
   {
     label: "WhatsApp",
     href: WHATSAPP_URL,
     icon: WhatsappIcon,
+    // WhatsApp brand identity — keep emerald regardless of site accent
+    iconClass: "text-[#25D366]",
+    hoverClass: "hover:border-[#25D366]/40 hover:bg-zinc-900",
   },
 ];
 
@@ -130,9 +137,11 @@ export function Footer() {
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-zinc-950 px-4 py-2 text-sm font-medium text-zinc-300 transition-all hover:border-accent/40 hover:bg-zinc-900 hover:text-zinc-50"
+                      className={`group inline-flex items-center gap-2 rounded-full border border-white/10 bg-zinc-950 px-4 py-2 text-sm font-medium text-zinc-300 transition-all hover:text-zinc-50 ${s.hoverClass}`}
                     >
-                      <Icon className="h-4 w-4 text-zinc-400 transition-colors group-hover:text-accent" />
+                      <Icon
+                        className={`h-4 w-4 transition-colors ${s.iconClass}`}
+                      />
                       {s.label}
                     </a>
                   </li>

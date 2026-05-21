@@ -1,12 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, Copy, Mail } from "lucide-react";
+import { Check, Copy, Mail, Phone } from "lucide-react";
 import { useState } from "react";
-import { GithubIcon, LinkedinIcon } from "./icons";
+import { GithubIcon, LinkedinIcon, WhatsappIcon } from "./icons";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const EMAIL = "mehdiosmanoglu@icloud.com";
+const PHONE_DISPLAY = "+90 545 823 03 21";
+const PHONE_TEL = "+905458230321";
+const WHATSAPP_URL = "https://wa.me/905458230321";
 
 const socials = [
   {
@@ -19,21 +22,31 @@ const socials = [
     href: "https://www.linkedin.com/in/mehdiosmanoglu",
     icon: LinkedinIcon,
   },
+  {
+    label: "WhatsApp",
+    href: WHATSAPP_URL,
+    icon: WhatsappIcon,
+  },
 ];
+
+type CopyKey = "email" | "phone";
 
 export function Footer() {
   const year = new Date().getFullYear();
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<CopyKey | null>(null);
 
-  const copyEmail = async () => {
+  const copyValue = async (value: string, key: CopyKey, fallback: string) => {
     try {
-      await navigator.clipboard.writeText(EMAIL);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1800);
+      await navigator.clipboard.writeText(value);
+      setCopied(key);
+      setTimeout(() => setCopied((c) => (c === key ? null : c)), 1800);
     } catch {
-      window.location.href = `mailto:${EMAIL}`;
+      window.location.href = fallback;
     }
   };
+
+  const copyEmail = () => copyValue(EMAIL, "email", `mailto:${EMAIL}`);
+  const copyPhone = () => copyValue(PHONE_DISPLAY, "phone", `tel:${PHONE_TEL}`);
 
   return (
     <footer id="contact" className="px-6 py-16 sm:px-8 lg:px-12">
@@ -63,22 +76,41 @@ export function Footer() {
                 experiments. Reach out — I read every message.
               </p>
 
-              <button
-                type="button"
-                onClick={copyEmail}
-                className="mt-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-zinc-950 px-4 py-2 font-mono text-sm text-zinc-200 transition-all hover:border-accent/40 hover:bg-zinc-900"
-                aria-label="Copy email address"
-              >
-                <Mail className="h-4 w-4 text-accent" />
-                <span>{EMAIL}</span>
-                <span className="ml-1 inline-flex h-5 w-5 items-center justify-center rounded-md border border-white/10 bg-white/[0.04] text-zinc-400">
-                  {copied ? (
-                    <Check className="h-3 w-3 text-accent" strokeWidth={2.5} />
-                  ) : (
-                    <Copy className="h-3 w-3" strokeWidth={2} />
-                  )}
-                </span>
-              </button>
+              <div className="mt-6 flex flex-col gap-2">
+                <button
+                  type="button"
+                  onClick={copyEmail}
+                  className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-zinc-950 px-4 py-2 font-mono text-sm text-zinc-200 transition-all hover:border-accent/40 hover:bg-zinc-900"
+                  aria-label="Copy email address"
+                >
+                  <Mail className="h-4 w-4 text-accent" />
+                  <span>{EMAIL}</span>
+                  <span className="ml-1 inline-flex h-5 w-5 items-center justify-center rounded-md border border-white/10 bg-white/[0.04] text-zinc-400">
+                    {copied === "email" ? (
+                      <Check className="h-3 w-3 text-accent" strokeWidth={2.5} />
+                    ) : (
+                      <Copy className="h-3 w-3" strokeWidth={2} />
+                    )}
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={copyPhone}
+                  className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-zinc-950 px-4 py-2 font-mono text-sm text-zinc-200 transition-all hover:border-accent/40 hover:bg-zinc-900"
+                  aria-label="Copy phone number"
+                >
+                  <Phone className="h-4 w-4 text-accent" />
+                  <span>{PHONE_DISPLAY}</span>
+                  <span className="ml-1 inline-flex h-5 w-5 items-center justify-center rounded-md border border-white/10 bg-white/[0.04] text-zinc-400">
+                    {copied === "phone" ? (
+                      <Check className="h-3 w-3 text-accent" strokeWidth={2.5} />
+                    ) : (
+                      <Copy className="h-3 w-3" strokeWidth={2} />
+                    )}
+                  </span>
+                </button>
+              </div>
               <p
                 aria-live="polite"
                 className={`mt-2 font-mono text-[10px] uppercase tracking-[0.18em] transition-opacity ${
@@ -89,11 +121,11 @@ export function Footer() {
               </p>
             </div>
 
-            <ul className="flex flex-wrap gap-2">
+            <ul className="flex flex-nowrap items-center gap-2">
               {socials.map((s) => {
                 const Icon = s.icon;
                 return (
-                  <li key={s.label}>
+                  <li key={s.label} className="shrink-0">
                     <a
                       href={s.href}
                       target="_blank"

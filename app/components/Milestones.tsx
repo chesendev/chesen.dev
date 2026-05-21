@@ -37,7 +37,7 @@ const milestones: Milestone[] = [
     icon: Calendar,
     title: "ODTÜ Blockchain Days 2026",
     detail:
-      "Attendee — METU Blockchain Society's flagship event covering protocol design, DeFi, and the Turkish Web3 ecosystem.",
+      "Attendee — METU Blockchain Society's flagship event covering protocol design, DeFi, and Web3 ecosystem.",
     year: "2026",
     status: "Attended",
   },

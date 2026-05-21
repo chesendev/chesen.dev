@@ -67,8 +67,8 @@ export function Hero() {
           className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs font-medium text-zinc-400 backdrop-blur"
         >
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#34d399]" />
           </span>
           <span className="text-zinc-300">Available for collaboration</span>
           <span className="mx-1 h-3 w-px bg-white/10" />

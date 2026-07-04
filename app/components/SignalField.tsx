@@ -36,7 +36,7 @@ export function SignalField() {
 
     const pointer = { x: -9e4, y: -9e4, tx: -9e4, ty: -9e4 };
 
-    let accent = "251, 146, 60";
+    let accent = "254, 189, 17";
     const readAccent = () => {
       accent =
         getComputedStyle(document.documentElement)
@@ -48,7 +48,7 @@ export function SignalField() {
     const themeObserver = new MutationObserver(readAccent);
     themeObserver.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ["data-theme", "data-overdrive"],
+      attributeFilter: ["data-overdrive"],
     });
 
     const resize = () => {

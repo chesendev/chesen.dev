@@ -38,7 +38,7 @@ export function Fx() {
     window.__chesenHello = true;
     console.log(
       "%c chesen.dev %c built by hand, no template %c",
-      "background:#fb923c;color:#09090b;font-weight:bold;padding:2px 8px;",
+      "background:#febd11;color:#09090b;font-weight:bold;padding:2px 8px;",
       "background:#18181b;color:#f4f4f5;padding:2px 8px;",
       "",
     );

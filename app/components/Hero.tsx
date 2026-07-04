@@ -123,8 +123,8 @@ export function Hero() {
           className="mt-20 flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500"
         >
           <span className="relative flex h-1.5 w-1.5">
-            <span className="absolute h-full w-full animate-ping rounded-full bg-accent opacity-70 motion-reduce:animate-none" />
-            <span className="relative h-1.5 w-1.5 rounded-full bg-accent" />
+            <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70 motion-reduce:animate-none" />
+            <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
           </span>
           <span className="text-zinc-300">{profile.availability}</span>
           <span className="text-zinc-700">/</span>

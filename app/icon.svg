@@ -1,5 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="14" fill="#09090b"/>
-  <text x="32" y="44" font-family="Georgia, serif" font-style="italic" font-size="38" fill="#fb923c" text-anchor="middle">C</text>
-  <rect x="14" y="50" width="36" height="2" fill="#fb923c" opacity="0.6"/>
+  <!-- signal field mark: dim grid, one live dot -->
+  <g fill="#52525b">
+    <circle cx="18" cy="18" r="3"/>
+    <circle cx="32" cy="18" r="3"/>
+    <circle cx="46" cy="18" r="3"/>
+    <circle cx="18" cy="32" r="3"/>
+    <circle cx="46" cy="32" r="3"/>
+    <circle cx="18" cy="46" r="3"/>
+    <circle cx="32" cy="46" r="3"/>
+    <circle cx="46" cy="46" r="3"/>
+  </g>
+  <circle cx="32" cy="32" r="6" fill="#febd11"/>
 </svg>

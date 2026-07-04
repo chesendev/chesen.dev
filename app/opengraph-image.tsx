@@ -4,7 +4,7 @@ import { profile } from "../content/site";
 export const dynamic = "force-static";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = `${profile.name} — Software Engineer`;
+export const alt = `${profile.name} — Software Engineering Student`;
 
 export default function OpengraphImage() {
   return new ImageResponse(
@@ -32,7 +32,7 @@ export default function OpengraphImage() {
           }}
         >
           <span>{profile.domain.toUpperCase()}</span>
-          <span style={{ color: "#fb923c" }}>●</span>
+          <span style={{ color: "#febd11" }}>●</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -44,7 +44,7 @@ export default function OpengraphImage() {
               display: "flex",
               fontSize: 96,
               fontStyle: "italic",
-              color: "#fb923c",
+              color: "#febd11",
             }}
           >
             {profile.lastName}

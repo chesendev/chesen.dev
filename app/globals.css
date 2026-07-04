@@ -3,7 +3,7 @@
 @theme {
   --color-background: #09090b;
   --color-foreground: #f4f4f5;
-  --color-accent: #fb923c;
+  --color-accent: #febd11;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -13,17 +13,11 @@
 }
 
 /*
- * Theme trims. Ember is the default; gold is hardware trim #2.
  * --accent-rgb feeds canvas + inline alpha effects, so one attribute
- * swap on <html> repaints the entire site including the signal field.
+ * swap on <html> (overdrive) repaints everything including the signal field.
  */
 :root {
-  --accent-rgb: 251, 146, 60; /* ember  · orange-400 */
-}
-
-[data-theme="gold"] {
-  --color-accent: #fbbf24; /* gold · amber-400 */
-  --accent-rgb: 251, 191, 36;
+  --accent-rgb: 254, 189, 17; /* #FEBD11 */
 }
 
 /* Konami overdrive — the palette this site was born with. */

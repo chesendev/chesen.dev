@@ -10,10 +10,10 @@ export const profile = {
   handle: "Chesen",
   domain: "chesen.dev",
   url: "https://chesen.dev",
-  kicker: "Chesen · Software Engineer",
+  kicker: "Chesen · Software Engineering Student",
   positioning: "I make browsers do the boring work — reliably.",
   supporting:
-    "C#/.NET by conviction, Playwright by necessity. Automation that survives contact with the real web, shipped through a Turkey→Texas dual degree.",
+    "C#/.NET by conviction, Playwright by necessity. Automation that survives contact with the real web, built through a Türkiye→Texas dual degree.",
   availability: "Available for collaboration",
   location: "Elazığ ⇄ Huntsville, TX",
   email: "mehdiosmanoglu@icloud.com",
@@ -79,21 +79,33 @@ export const projects: Project[] = [
 
 export const about = {
   paragraphs: [
-    "I'm a software engineering student on a dual-diploma track: Fırat University in Turkey, then Sam Houston State University in Texas. The destination is the US tech market; the vehicle is C#/.NET fundamentals practiced daily, not collected as résumé keywords.",
+    "I'm a software engineering student on a dual-diploma track: Fırat University in Türkiye, with the Texas years at Sam Houston State University ahead. The focus is simple — C#/.NET fundamentals practiced daily, not collected as résumé keywords.",
     "Before I wrote my first line of C#, I built a philosophy media brand to roughly 600K followers and cut professional video in Premiere and After Effects. That's not a detour — it's why my automation ships with taste and my demos tell a story.",
   ],
   languages: [
     { name: "Kurdish", level: "native" },
     { name: "Turkish", level: "native" },
     { name: "English", level: "professional" },
-    { name: "German", level: "in progress" },
-    { name: "Russian", level: "in progress" },
   ],
-  toolbox: ["C# / .NET", "Playwright", "Python", "TypeScript", "SUI Move"],
+  toolbox: [
+    "C# / .NET",
+    "Java",
+    "C++",
+    "Python",
+    "TypeScript",
+    "Playwright",
+    "SQL",
+    "Git & GitHub",
+    "SUI Move",
+    "Avalanche",
+    "Premiere Pro",
+    "After Effects",
+    "Photoshop",
+  ],
   log: [
     { year: "2026", entry: "ODTÜ Blockchain Days — attendee" },
-    { year: "2026", entry: "21-Day SUI Move Challenge — completed" },
-    { year: "2026", entry: "C# Technical Challenge — completed" },
+    { year: "2026", entry: "21-Day SUI Move Challenge — in progress" },
+    { year: "2026", entry: "C# Technical Challenge — in progress" },
     { year: "2025", entry: "DevFest Istanbul — attendee" },
     { year: "····", entry: "Dual diploma, Fırat ⇄ SHSU — ongoing" },
   ],
@@ -102,8 +114,9 @@ export const about = {
 export const now = [
   "Deep in C#/.NET — building automation tooling that outgrows the word “script”.",
   "Structured practice on the Exercism C# track, daily.",
-  "Shipping small Move experiments on SUI.",
-  "Preparing for the US leg of the dual degree at SHSU.",
+  "Working through the 21-Day SUI Move Challenge.",
+  "Digging into the Avalanche ecosystem — docs, consensus, small experiments.",
+  "Preparing for the Texas leg of the dual degree at SHSU.",
 ] as const;
 
 export const nav = [

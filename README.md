@@ -4,7 +4,7 @@
 
 > One serif voice for the human, one mono voice for the machine.
 > A live signal field answers your cursor; everything else is restraint —
-> hairlines, vertical rhythm, and two hardware trims (ember / gold) instead of decoration.
+> hairlines, vertical rhythm, and a single signal color (#FEBD11) instead of decoration.
 > The site behaves like an instrument: ⌘K drives it, the konami code overclocks it,
 > and every word on the page lives in one typed content file.
 
@@ -25,9 +25,8 @@ automation in C#/.NET and Python.
 | --- | --- |
 | `content/site.ts` | Single source of truth for every word, link, and project |
 | `app/components/SignalField.tsx` | Signature visual — 60fps canvas grid, cursor ripple, pauses offscreen, static under reduced-motion |
-| `app/components/CommandPalette.tsx` | ⌘K palette: navigate, copy email, links, theme, barrel roll |
+| `app/components/CommandPalette.tsx` | ⌘K palette: navigate, copy email, links, barrel roll |
 | `app/components/Fx.tsx` | Console greeting, konami overdrive, toast |
-| `app/lib/theme.ts` | Ember/gold trim swap via `data-theme`, persisted |
 | `app/opengraph-image.tsx` · `sitemap.ts` · `robots.ts` · `icon.svg` | Generated metadata suite |
 
 ## Commands

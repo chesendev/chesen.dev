@@ -3,7 +3,7 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { nav, profile, socials } from "../../content/site";
-import { toast, toggleTheme } from "../lib/theme";
+import { toast } from "../lib/toast";
 import { EASE } from "./motion";
 
 type Command = {
@@ -61,17 +61,6 @@ export function CommandPalette() {
             .writeText(profile.email)
             .then(() => toast("Email copied — talk soon."))
             .catch(() => toast("Clipboard blocked — email is in Contact."));
-        },
-      },
-      {
-        id: "toggle-theme",
-        group: "Actions",
-        label: "Toggle theme",
-        hint: "ember ⇄ gold",
-        keywords: "color accent orange amber trim",
-        run: () => {
-          const next = toggleTheme();
-          toast(next === "gold" ? "Trim: gold." : "Trim: ember.");
         },
       },
       {

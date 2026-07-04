@@ -26,14 +26,14 @@ const instrument = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(profile.url),
   title: {
-    default: `${profile.name} — Software Engineer`,
+    default: `${profile.name} — Software Engineering Student`,
     template: `%s · ${profile.name}`,
   },
   description: profile.description,
   keywords: [
     profile.name,
     profile.handle,
-    "Software Engineer",
+    "Software Engineering Student",
     "Browser Automation",
     "C#",
     ".NET",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   authors: [{ name: profile.name, url: profile.url }],
   creator: profile.name,
   openGraph: {
-    title: `${profile.name} — Software Engineer`,
+    title: `${profile.name} — Software Engineering Student`,
     description: profile.positioning,
     url: profile.url,
     siteName: profile.domain,
@@ -96,16 +96,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable}`}
-      suppressHydrationWarning
     >
-      <head>
-        {/* restore accent trim before first paint */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{if(localStorage.getItem('theme')==='gold')document.documentElement.dataset.theme='gold'}catch(e){}`,
-          }}
-        />
-      </head>
       <body
         className="min-h-screen bg-background text-foreground antialiased"
         suppressHydrationWarning

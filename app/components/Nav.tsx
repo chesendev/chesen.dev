@@ -2,21 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { nav, profile } from "../../content/site";
-import { applyTheme, currentTheme, type ThemeId } from "../lib/theme";
-
-const TRIMS: { id: ThemeId; color: string; label: string }[] = [
-  { id: "ember", color: "#fb923c", label: "Ember trim" },
-  { id: "gold", color: "#fbbf24", label: "Gold trim" },
-];
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [trim, setTrim] = useState<ThemeId>("ember");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setTrim(currentTheme());
-    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -52,45 +42,14 @@ export function Nav() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-4">
-          <div
-            role="group"
-            aria-label="Accent trim"
-            className="flex items-center gap-2"
-          >
-            {TRIMS.map((t) => {
-              const active = mounted && trim === t.id;
-              return (
-                <button
-                  key={t.id}
-                  type="button"
-                  aria-label={t.label}
-                  aria-pressed={active}
-                  title={t.label}
-                  onClick={() => {
-                    applyTheme(t.id);
-                    setTrim(t.id);
-                  }}
-                  className={`h-3 w-3 rounded-full transition-all ${
-                    active
-                      ? "scale-125 ring-1 ring-white/50 ring-offset-2 ring-offset-background"
-                      : "opacity-40 hover:opacity-80"
-                  }`}
-                  style={{ background: t.color }}
-                />
-              );
-            })}
-          </div>
-
-          <button
-            type="button"
-            onClick={() => window.dispatchEvent(new Event("chesen:palette"))}
-            className="border border-zinc-800 px-2.5 py-1 font-mono text-[11px] text-zinc-400 transition-colors hover:border-zinc-600 hover:text-foreground"
-            aria-label={`Open command palette (${profile.handle})`}
-          >
-            ⌘K
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new Event("chesen:palette"))}
+          className="border border-zinc-800 px-2.5 py-1 font-mono text-[11px] text-zinc-400 transition-colors hover:border-zinc-600 hover:text-foreground"
+          aria-label={`Open command palette (${profile.handle})`}
+        >
+          ⌘K
+        </button>
       </nav>
     </header>
   );

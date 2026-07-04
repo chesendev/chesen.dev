@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# chesen.dev
 
-## Getting Started
+## Concept — SIGNAL
 
-First, run the development server:
+> One serif voice for the human, one mono voice for the machine.
+> A live signal field answers your cursor; everything else is restraint —
+> hairlines, vertical rhythm, and two hardware trims (ember / gold) instead of decoration.
+> The site behaves like an instrument: ⌘K drives it, the konami code overclocks it,
+> and every word on the page lives in one typed content file.
+
+Personal site of **Mehdi "Chesen" Osmanoğlu** — software engineering dual-degree
+student (Fırat University ⇄ Sam Houston State University) building browser
+automation in C#/.NET and Python.
+
+## Stack
+
+- **Next.js 16** (App Router, RSC, static export) · **TypeScript strict**
+- **Tailwind CSS v4** (CSS-first `@theme` tokens) · **Framer Motion** (transform/opacity only)
+- Zero other runtime dependencies. Deploys anywhere static files are served
+  (GitHub Pages via `CNAME` today; Vercel-ready as-is).
+
+## Architecture
+
+| Path | Purpose |
+| --- | --- |
+| `content/site.ts` | Single source of truth for every word, link, and project |
+| `app/components/SignalField.tsx` | Signature visual — 60fps canvas grid, cursor ripple, pauses offscreen, static under reduced-motion |
+| `app/components/CommandPalette.tsx` | ⌘K palette: navigate, copy email, links, theme, barrel roll |
+| `app/components/Fx.tsx` | Console greeting, konami overdrive, toast |
+| `app/lib/theme.ts` | Ember/gold trim swap via `data-theme`, persisted |
+| `app/opengraph-image.tsx` · `sitemap.ts` · `robots.ts` · `icon.svg` | Generated metadata suite |
+
+## Commands
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev     # develop
+npm run build   # static export → out/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Easter eggs
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open the console. Press ⌘K. Try ↑↑↓↓←→←→BA.

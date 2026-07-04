@@ -2,47 +2,45 @@
 
 @theme {
   --color-background: #09090b;
-  --color-foreground: #fafafa;
-  --color-muted: #a1a1aa;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-surface: #18181b;
-  --color-surface-2: #27272a;
-
-  /* Default theme = Modern Orange */
-  --color-accent: #fb923c; /* orange-400 */
-  --color-accent-dim: rgba(251, 146, 60, 0.15);
+  --color-foreground: #f4f4f5;
+  --color-accent: #fb923c;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
-    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    Consolas, monospace;
+  --font-display: var(--font-instrument), Georgia, "Times New Roman", serif;
 }
 
-/* Theme-aware tokens — overridable per [data-theme] */
+/*
+ * Theme trims. Ember is the default; gold is hardware trim #2.
+ * --accent-rgb feeds canvas + inline alpha effects, so one attribute
+ * swap on <html> repaints the entire site including the signal field.
+ */
 :root {
-  --accent-rgb: 251, 146, 60;       /* orange-400 */
-  --accent-via: #fdba74;            /* orange-300 */
-  --accent-to: #fde68a;             /* amber-200 */
-  --progress-from: #f97316;         /* orange-500 */
-  --progress-via: #fbbf24;          /* amber-400 */
-  --progress-to: #f97316;           /* orange-500 */
+  --accent-rgb: 251, 146, 60; /* ember  · orange-400 */
 }
 
-/* Altın sarısı palette */
 [data-theme="gold"] {
-  --color-accent: #fbbf24;          /* amber-400 */
-  --color-accent-dim: rgba(251, 191, 36, 0.15);
+  --color-accent: #fbbf24; /* gold · amber-400 */
   --accent-rgb: 251, 191, 36;
-  --accent-via: #fcd34d;            /* amber-300 */
-  --accent-to: #fef08a;             /* yellow-200 */
-  --progress-from: #eab308;         /* yellow-500 */
-  --progress-via: #fde047;          /* yellow-300 */
-  --progress-to: #eab308;           /* yellow-500 */
+}
+
+/* Konami overdrive — the palette this site was born with. */
+[data-overdrive] {
+  --color-accent: #34d399;
+  --accent-rgb: 52, 211, 153;
 }
 
 html {
   color-scheme: dark;
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -59,22 +57,19 @@ body {
   color: #09090b;
 }
 
-.grid-pattern {
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(
-    ellipse 80% 60% at 50% 0%,
-    #000 30%,
-    transparent 80%
-  );
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
-/* Smooth transitions when swapping themes */
-[data-theme],
-:root {
-  transition: --color-accent 200ms ease,
-              --accent-via 200ms ease,
-              --accent-to 200ms ease;
+/* Easter egg: barrel roll. Fixed nav rides along — that's the joke. */
+@keyframes barrel {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.barrel {
+  animation: barrel 1.1s cubic-bezier(0.22, 1, 0.36, 1) 1;
 }

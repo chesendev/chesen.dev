@@ -1,21 +1,31 @@
-import { Footer } from "./components/Footer";
+import { About } from "./components/About";
+import { CommandPalette } from "./components/CommandPalette";
+import { Contact } from "./components/Contact";
+import { Fx } from "./components/Fx";
 import { Hero } from "./components/Hero";
-import { Milestones } from "./components/Milestones";
 import { Nav } from "./components/Nav";
-import { ScrollProgress } from "./components/ScrollProgress";
-import { Skills } from "./components/Skills";
+import { Now } from "./components/Now";
+import { Work } from "./components/Work";
 
 export default function Home() {
   return (
-    <>
-      <ScrollProgress />
+    <div id="site-root">
+      <a
+        href="#work"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:border focus:border-accent focus:bg-background focus:px-4 focus:py-2 focus:font-mono focus:text-sm"
+      >
+        Skip to content
+      </a>
       <Nav />
-      <main className="relative">
+      <main>
         <Hero />
-        <Skills />
-        <Milestones />
-        <Footer />
+        <Work />
+        <About />
+        <Now />
+        <Contact />
       </main>
-    </>
+      <CommandPalette />
+      <Fx />
+    </div>
   );
 }

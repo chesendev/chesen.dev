@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { about, profile, socials } from "../content/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,84 +15,76 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://chesen.dev"),
+  metadataBase: new URL(profile.url),
   title: {
-    default: "Mehdi Osmanoğlu — Software Engineering Student",
-    template: "%s · Mehdi Osmanoğlu",
+    default: `${profile.name} — Software Engineer`,
+    template: `%s · ${profile.name}`,
   },
-  description:
-    "Mehdi Osmanoğlu — Software Engineering dual-diploma student building robust backend systems, exploring algorithm design and Web3 ecosystems.",
+  description: profile.description,
   keywords: [
-    "Mehdi Osmanoğlu",
-    "Chesen",
+    profile.name,
+    profile.handle,
     "Software Engineer",
-    "Computer Science",
-    "Backend",
+    "Browser Automation",
     "C#",
     ".NET",
-    "Move",
-    "SUI",
-    "Web3",
+    "Playwright",
+    "Python",
+    "SUI Move",
     "Fırat University",
     "Sam Houston State University",
   ],
-  authors: [{ name: "Mehdi Osmanoğlu" }],
-  creator: "Mehdi Osmanoğlu",
+  authors: [{ name: profile.name, url: profile.url }],
+  creator: profile.name,
   openGraph: {
-    title: "Mehdi Osmanoğlu — Software Engineering Student",
-    description:
-      "Backend, algorithms, and Web3. Dual-degree Software Engineering student.",
-    url: "https://chesen.dev",
-    siteName: "chesen.dev",
+    title: `${profile.name} — Software Engineer`,
+    description: profile.positioning,
+    url: profile.url,
+    siteName: profile.domain,
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mehdi Osmanoğlu",
-    description:
-      "Backend, algorithms, and Web3. Dual-degree Software Engineering student.",
+    title: profile.name,
+    description: profile.positioning,
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  robots: { index: true, follow: true },
 };
 
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Mehdi Osmanoğlu",
-  alternateName: "Chesen",
-  url: "https://chesen.dev",
+  name: profile.name,
+  alternateName: profile.handle,
+  url: profile.url,
+  email: `mailto:${profile.email}`,
   jobTitle: "Software Engineering Student",
-  description:
-    "Dual-diploma student focused on backend architectures, algorithm design, and Web3 ecosystems.",
+  description: profile.description,
   knowsAbout: [
     "C#",
     ".NET",
-    "Java",
-    "C++",
+    "Playwright",
     "Python",
-    "Move",
-    "SUI",
-    "Algorithm Design",
-    "Backend Architecture",
+    "TypeScript",
+    "Browser Automation",
+    "SUI Move",
   ],
+  knowsLanguage: about.languages.map((lang) => lang.name),
   alumniOf: [
-    {
-      "@type": "CollegeOrUniversity",
-      name: "Fırat University",
-    },
-    {
-      "@type": "CollegeOrUniversity",
-      name: "Sam Houston State University",
-    },
+    { "@type": "CollegeOrUniversity", name: "Fırat University" },
+    { "@type": "CollegeOrUniversity", name: "Sam Houston State University" },
   ],
-  sameAs: [
-    "https://github.com/chesendev",
-    "https://www.linkedin.com/in/mehdiosmanoglu",
-  ],
+  sameAs: [socials.github.url, socials.linkedin.url],
 };
 
 export default function RootLayout({
@@ -102,14 +95,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable}`}
       suppressHydrationWarning
     >
       <head>
-        {/* Restore theme before paint to avoid FOUC */}
+        {/* restore accent trim before first paint */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem('theme');if(t==='gold')document.documentElement.dataset.theme='gold';}catch(e){}`,
+            __html: `try{if(localStorage.getItem('theme')==='gold')document.documentElement.dataset.theme='gold'}catch(e){}`,
           }}
         />
       </head>

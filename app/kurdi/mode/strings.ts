@@ -17,11 +17,11 @@ export const ui = {
     kicker: "Chesen · Xwendekarê Endezyariya Nermalavê",
     positioning: "Karê bêzar didim gerokan — bi ewlehî.",
     supporting:
-      "C#/.NET ji dil, Playwright ji pêwîstiyê. Otomasyona ku li ber webê rastîn radiweste — di rêya Amed→Texas de.",
+      "C#/.NET ji dil, Playwright ji pêwîstiyê. Otomasyona ku li ber webê rastîn radiweste — di rêya Xarpêt→Texas de.",
     cta: "Xebatên bijartî",
     orPress: "an jî li her derê",
     availability: "Ji bo hevkariyê vekirî",
-    location: "Amed ⇄ Huntsville, TX",
+    location: "Xarpêt ⇄ Huntsville, TX",
   },
   sections: {
     work: { index: "01", title: "Xebatên Bijartî" },
@@ -46,7 +46,7 @@ export const ui = {
     languagesTitle: "Ziman",
     languages: [
       { name: "Kurdî", level: "zikmakî" },
-      { name: "Tirkî", level: "zikmakî" },
+      { name: "Romî", level: "zikmakî" },
       { name: "Îngilîzî", level: "profesyonel" },
     ],
     toolboxTitle: "Sindoqa Amûran",
@@ -93,9 +93,6 @@ export const ui = {
   eggs: {
     newrozToast: "Newroz pîroz be.",
     amedsporChant: "Her bijî Amedspor!",
-    verseTitle: "Mem û Zîn · 1695",
-    verse: ["Ger dê hebûya me îttîfaqek,", "Vêk ra bikira me înqiyadek."],
-    verseSign: "— Ehmedê Xanî",
   },
 } as const;
 
@@ -170,11 +167,15 @@ export type Hero21 = {
   date: string;
   line: string;
   era: "MÎT" | "KEVNAR" | "NAVERAST" | "NÛJEN";
+  /** the words behind the glyph — click to hear them */
+  quote: string[];
+  source: string;
 };
 
 /**
  * BÎR — the twenty-one. One for each ray of the sun.
  * The arc runs myth → memory and closes, deliberately, in 1974.
+ * Every quote is tabled in COPY_REVIEW.md with its attestation level.
  */
 export const heroes: Hero21[] = [
   // MÎT
@@ -184,6 +185,8 @@ export const heroes: Hero21[] = [
     date: "mît",
     line: "Agirê wî bû Newroz.",
     era: "MÎT",
+    quote: ["Agirê ku îro geş bû,", "êdî venamire."],
+    source: "ji efsaneya Newrozê",
   },
   {
     id: "sahmaran",
@@ -191,6 +194,8 @@ export const heroes: Hero21[] = [
     date: "mît",
     line: "Di bin erdê de, şahbanûya aqil.",
     era: "MÎT",
+    quote: ["Ji mirovan wefa nayê —", "lê min dîsa jî sirra xwe da wan."],
+    source: "ji çîroka Şahmaran",
   },
   {
     id: "rustem",
@@ -198,6 +203,8 @@ export const heroes: Hero21[] = [
     date: "mît",
     line: "Mêrxasê çîrokên dengbêjan.",
     era: "MÎT",
+    quote: ["Ez Rustemê Zal im —", "kurê Zal im, ji tovê Sam im."],
+    source: "ji kilamên dengbêjan",
   },
   {
     id: "memuzin",
@@ -205,6 +212,8 @@ export const heroes: Hero21[] = [
     date: "mît",
     line: "Du dil, yek çîrok, dîwarek di navberê de.",
     era: "MÎT",
+    quote: ["Ger dê hebûya me îttîfaqek,", "Vêk ra bikira me înqiyadek."],
+    source: "Mem û Zîn · 1695",
   },
   {
     id: "siyabend",
@@ -212,6 +221,8 @@ export const heroes: Hero21[] = [
     date: "mît",
     line: "Evîna ku ji Sîpanê bilindtir bû.",
     era: "MÎT",
+    quote: ["Sîpan bilind e —", "evîna me jê bilindtir."],
+    source: "ji kilama Siyabend û Xecê",
   },
   {
     id: "derwes",
@@ -219,6 +230,8 @@ export const heroes: Hero21[] = [
     date: "mît",
     line: "Siwarê êzîdî yê destanan.",
     era: "MÎT",
+    quote: ["Soza Edûlê bes e —", "bila rê rêya mirinê be."],
+    source: "ji destana Derwêşê Evdî",
   },
   // KEVNAR
   {
@@ -227,6 +240,8 @@ export const heroes: Hero21[] = [
     date: "~700 BZ",
     line: "Avakarê Mediyayê, heft sûrên Ekbatanê.",
     era: "KEVNAR",
+    quote: ["Ji min re bajarekî ava bikin —", "ez ê dad bidim we."],
+    source: "li gorî Herodot",
   },
   {
     id: "keyaksar",
@@ -234,6 +249,8 @@ export const heroes: Hero21[] = [
     date: "612 BZ",
     line: "Nînewa ket — sala sifir dest pê kir.",
     era: "KEVNAR",
+    quote: ["Bajarê mezin", "bû gir û kavil."],
+    source: "Kronîka Babîlê · 612 BZ",
   },
   // NAVERAST
   {
@@ -242,6 +259,8 @@ export const heroes: Hero21[] = [
     date: "1137",
     line: "Siltanê ji Tikrîtê.",
     era: "NAVERAST",
+    quote: ["Xwe ji rijandina xwînê biparêze —", "xwîn tu carî ranazê."],
+    source: "şîreta wî ya dawî, ji kurê wî re",
   },
   {
     id: "ciziri",
@@ -249,6 +268,8 @@ export const heroes: Hero21[] = [
     date: "~1570",
     line: "Bavê dîwana kurdî.",
     era: "NAVERAST",
+    quote: ["Ger tu dixwazî durrê şehwarê,", "were dîwana Melê carê."],
+    source: "Dîwan",
   },
   {
     id: "teyran",
@@ -256,6 +277,8 @@ export const heroes: Hero21[] = [
     date: "1590",
     line: "Ê ku bi teyran re diaxivî.",
     era: "NAVERAST",
+    quote: ["Ey av û av —", "tu bê sekin û bê rawest î."],
+    source: "Ey Av û Av",
   },
   {
     id: "lepzerin",
@@ -263,6 +286,8 @@ export const heroes: Hero21[] = [
     date: "1609",
     line: "Berxwedana Dimdimê, destê zêrîn.",
     era: "NAVERAST",
+    quote: ["Dimdim nayê dayîn —", "bila bibe gora me."],
+    source: "ji Beyta Dimdimê",
   },
   {
     id: "xani",
@@ -270,6 +295,8 @@ export const heroes: Hero21[] = [
     date: "1695",
     line: "Miletek bi pirtûkekê nivîsand.",
     era: "NAVERAST",
+    quote: ["Da xelq nebêjitin ku Ekrad", "bê marîfet in, bê esl û bunyad."],
+    source: "Mem û Zîn",
   },
   {
     id: "xanzad",
@@ -277,6 +304,8 @@ export const heroes: Hero21[] = [
     date: "~1590",
     line: "Şahbanûya Soranê.",
     era: "NAVERAST",
+    quote: ["Li pêşiya leşkerê xwe siwar dibû —", "bi şûr û bi rûmet."],
+    source: "li gorî Evliya Çelebî",
   },
   // NÛJEN
   {
@@ -285,6 +314,8 @@ export const heroes: Hero21[] = [
     date: "1847",
     line: "Mîrê dawî yê Botanê.",
     era: "NÛJEN",
+    quote: ["Ez mîrê Botan im —", "xulamê tu kesî nînim."],
+    source: "gotina jê tê veguhastin",
   },
   {
     id: "mesture",
@@ -292,6 +323,8 @@ export const heroes: Hero21[] = [
     date: "1848",
     line: "Helbestvan, û dîroknivîsa yekem a Rojhilatê.",
     era: "NÛJEN",
+    quote: ["Min dîrok nivîsand,", "da ku bîr nemire."],
+    source: "di ruhê berhema wê de",
   },
   {
     id: "evdal",
@@ -299,6 +332,8 @@ export const heroes: Hero21[] = [
     date: "~1850",
     line: "Şahê dengbêjan.",
     era: "NÛJEN",
+    quote: ["Werê qulingo —", "dengê xwe bide dengê min."],
+    source: "ji kilama Qulingo",
   },
   {
     id: "sexseid",
@@ -306,6 +341,11 @@ export const heroes: Hero21[] = [
     date: "1925",
     line: "Bîra wî ya Amedê ye.",
     era: "NÛJEN",
+    quote: [
+      "Xema min nîne ku ez li darê bêm daliqandin —",
+      "doza min ji bo dîn û gelê min e.",
+    ],
+    source: "gotinên dawî · Amed, 1925",
   },
   {
     id: "seyidriza",
@@ -313,6 +353,8 @@ export const heroes: Hero21[] = [
     date: "1937",
     line: "Dêrsim — deng nehat birîn.",
     era: "NÛJEN",
+    quote: ["Ez li ber we netewiyam —", "ew jî bila ji we re bibe derd."],
+    source: "gotinên dawî · 1937",
   },
   {
     id: "qazi",
@@ -320,6 +362,8 @@ export const heroes: Hero21[] = [
     date: "1946",
     line: "Serokê Komara Mahabadê — çar çira.",
     era: "NÛJEN",
+    quote: ["Ez ne ji sêdarê ditirsim —", "ez ji dubendiya we ditirsim."],
+    source: "ji wesiyeta wî ya dawî · 1947",
   },
   {
     id: "leyla",
@@ -327,5 +371,7 @@ export const heroes: Hero21[] = [
     date: "1974",
     line: "Navê dawî li ser rêzê — kulîlkek.",
     era: "NÛJEN",
+    quote: ["Min bikujin!", "Bi mirina min hezaran kurd hişyar dibin."],
+    source: "gotinên dawî · 1974",
   },
 ];

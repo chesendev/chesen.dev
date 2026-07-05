@@ -42,3 +42,6 @@ next-env.d.ts
 
 # owner's working docs — never public
 COPY_REVIEW.md
+
+# local Claude Code state
+.claude/settings.local.json

@@ -6,7 +6,7 @@ import { useState } from "react";
 import { profile, socials } from "../../../content/site";
 import { GithubIcon, LinkedinIcon, WhatsappIcon } from "../../components/icons";
 import { EASE, Reveal } from "../../components/motion";
-import { FourBeats } from "./KurdiSections";
+import { Beats } from "./KurdiSections";
 import { heroGlyphs, SurHorizon } from "./glyphs";
 import styles from "./kurdi.module.css";
 import { isNewroz, kurdishDate, kurdishYear, ui } from "./strings";
@@ -42,7 +42,7 @@ export function KurdiContact() {
             <span className="font-mono text-xs" style={{ color: "var(--zer)" }}>
               {ui.sections.contact.index}
             </span>
-            <FourBeats active={4} />
+            <Beats active={4} />
             <h2
               className="font-display text-3xl tracking-tight sm:text-4xl"
               style={{ color: "var(--sor-display)" }}

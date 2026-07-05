@@ -257,4 +257,11 @@ export const heroGlyphs: Record<string, (props: P) => React.ReactElement> = {
       <path d="M12 15c-2 0-3-1-4-2M12 17c2 0 3-1 4-2" />
     </G>
   ),
+  // Celadet — a pen nib: the letters themselves
+  celadet: (p) => (
+    <G {...p}>
+      <path d="M12 3l4.5 6.5L12 21 7.5 9.5 12 3Z" />
+      <path d="M12 9v5M10 21h4" />
+    </G>
+  ),
 };

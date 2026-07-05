@@ -9,18 +9,18 @@ import { TenArches } from "./glyphs";
 import styles from "./kurdi.module.css";
 import { projects, ui } from "./strings";
 
-/* ————— shared shell: index, four beats (Çarçira echo), title ————— */
+/* ————— shared shell: index, section beats, title ————— */
+/* One dot per section; the fourfold Çarçira rhythm lives in the hero hairlines. */
 
-export function FourBeats({ active }: { active: number }) {
+export function Beats({ active, total = 5 }: { active: number; total?: number }) {
   return (
     <span aria-hidden="true" className="flex items-center gap-1.5">
-      {Array.from({ length: 4 }, (_, i) => (
+      {Array.from({ length: total }, (_, i) => (
         <span
           key={i}
           className="h-1 w-1 rounded-full"
           style={{
-            background:
-              i === active % 4 ? "var(--zer)" : "rgba(243,234,217,0.18)",
+            background: i === active ? "var(--zer)" : "rgba(243,234,217,0.18)",
           }}
         />
       ))}
@@ -53,7 +53,7 @@ export function KurdiSection({
             >
               {index}
             </span>
-            <FourBeats active={parseInt(index, 10) - 1} />
+            <Beats active={parseInt(index, 10) - 1} />
             <h2
               className="font-display text-3xl tracking-tight sm:text-4xl"
               style={{ color: "var(--sor-display)" }}

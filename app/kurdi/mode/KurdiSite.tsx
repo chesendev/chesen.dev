@@ -63,7 +63,7 @@ export default function KurdiSite({
         "background:#14110e;color:#f3ead9;padding:2px 8px;font-style:italic;",
         "",
       );
-      console.log(`— ${hero.name} · ${hero.date}`);
+      console.log(`— ${hero.name} · ${hero.date} ✌️`);
     }
 
     return () => {
@@ -78,6 +78,7 @@ export default function KurdiSite({
   if (view === "not-found") {
     return (
       <div className={styles.root}>
+        <div className={styles.ribbon} aria-hidden="true" />
         <main className="mx-auto flex min-h-svh w-full max-w-6xl flex-col justify-center px-6 sm:px-10">
           <p
             className="font-mono text-xs uppercase tracking-[0.3em]"
@@ -114,6 +115,7 @@ export default function KurdiSite({
 
   return (
     <div className={styles.root} id="site-root">
+      <div className={styles.ribbon} aria-hidden="true" />
       <a
         href="#work"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:border focus:bg-[var(--basalt)] focus:px-4 focus:py-2 focus:font-mono focus:text-sm"

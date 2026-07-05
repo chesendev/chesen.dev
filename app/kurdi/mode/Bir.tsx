@@ -6,7 +6,7 @@ import { EASE, Reveal } from "../../components/motion";
 import { heroGlyphs } from "./glyphs";
 import { KurdiSection } from "./KurdiSections";
 import styles from "./kurdi.module.css";
-import { heroes, ui, type Hero21 } from "./strings";
+import { coda, codaIntro, heroes, ui, type Hero21 } from "./strings";
 
 /**
  * BÎR — the twenty-one. One for each ray of the sun.
@@ -96,6 +96,50 @@ export function Bir() {
           })}
         </ol>
       </div>
+
+      {/*
+        The coda — not one of the twenty-one. The twenty-one stand in
+        the river; the man who gave them letters stands at its mouth.
+      */}
+      <Reveal>
+        <div className="mt-24 text-center">
+          <p
+            className="font-mono text-[11px] tracking-[0.2em]"
+            style={{ color: "var(--hevsel-400)" }}
+          >
+            {codaIntro}
+          </p>
+          <div className="mt-6 flex items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => setOpenHero(coda)}
+              aria-label={`Gotina ${coda.name}`}
+              className="cursor-pointer transition-transform hover:scale-110 focus-visible:scale-110"
+              style={{ color: "var(--hevsel-400)" }}
+            >
+              {(() => {
+                const CodaGlyph = heroGlyphs[coda.id];
+                return <CodaGlyph className="h-6 w-6" />;
+              })()}
+            </button>
+            <h3
+              className="font-display text-xl tracking-tight sm:text-2xl"
+              style={{ color: "var(--sor)" }}
+            >
+              {coda.name}
+            </h3>
+            <span className="font-mono text-xs" style={{ color: "var(--zer)" }}>
+              {coda.date}
+            </span>
+          </div>
+          <p
+            className="mx-auto mt-2 max-w-md text-sm leading-relaxed"
+            style={{ color: "var(--xani-dim)" }}
+          >
+            {coda.line}
+          </p>
+        </div>
+      </Reveal>
 
       {/* the words behind the glyph */}
       <AnimatePresence>

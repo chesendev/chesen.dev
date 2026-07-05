@@ -40,7 +40,7 @@ export const ui = {
     cirok: [
       "Lo lo…",
       "Ez ji Amedê me.",
-      "Kevirên reş ên Sur, ava Dîcleyê, dengê hewşê.",
+      "Kevirên reş ên Bircên Amedê, ava Dîcleyê, dengê hewşê.",
       "Her tişt ji wir dest pê dike — û her tişt vedigere wir.",
     ],
     languagesTitle: "Ziman",
@@ -68,8 +68,8 @@ export const ui = {
   ],
   contact: {
     headline: "Silav",
-    headlineAccent: "bike.",
-    lede: "Ji bo otomasyon, algorîtma û ceribandinên Web3 vekirî me. Binivîse — her peyamê dixwînim.",
+    headlineAccent: "bide.",
+    lede: "Ji bo otomasyon, algorîtma û ceribandinên Web3 vekirî me. Binivîse — her peyamê dixwînim. ✌️",
     copyHint: "[kopî]",
     copied: "hat kopîkirin — em bipeyivin.",
     exit: "derkeve",
@@ -91,8 +91,8 @@ export const ui = {
     hints: "↑↓ bigere · ↵ bimeşîne · esc bigire",
   },
   eggs: {
-    newrozToast: "Newroz pîroz be.",
-    amedsporChant: "Her bijî Amedspor!",
+    newrozToast: "Newroz pîroz be. ✌️",
+    amedsporChant: "Her bijî Amedspor! ✌️",
   },
 } as const;
 
@@ -375,3 +375,24 @@ export const heroes: Hero21[] = [
     source: "gotinên dawî · 1974",
   },
 ];
+
+/**
+ * The coda. Not one of the twenty-one — the twenty-one stand in the
+ * river; the man who gave them letters stands at its mouth. Every word
+ * of this mode is written in his alphabet.
+ */
+export const coda: Hero21 = {
+  id: "celadet",
+  name: "Celadet Alî Bedirxan",
+  date: "1932",
+  line: "Damezrînerê Xoybûnê, bavê Hawarê — ev rûpel bi tîpên wî dinivîse.",
+  era: "NÛJEN",
+  quote: [
+    "Hawar dengê zanînê ye. Zanîn xwe nasîn e.",
+    "Xwe nasîn ji me re rêya felat û xweşiyê vedike.",
+  ],
+  source: "Hawar, hejmar 1 · 1932",
+};
+
+/** intro line above the coda station */
+export const codaIntro = "û tîpên ku hûn niha pê dixwînin —";

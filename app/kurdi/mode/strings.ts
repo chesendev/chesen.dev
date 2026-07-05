@@ -396,3 +396,23 @@ export const coda: Hero21 = {
 
 /** intro line above the coda station */
 export const codaIntro = "û tîpên ku hûn niha pê dixwînin —";
+
+/**
+ * At his side — Rewşen Bedirxan. Writer, teacher, the hand that kept
+ * Hawar's flame burning after 1951.
+ */
+export const codaSide: Hero21 = {
+  id: "rewsen",
+  name: "Rewşen Bedirxan",
+  date: "1909–1992",
+  line: "Nivîskar û mamoste — piştî Celadet, dengê Hawarê ew bû.",
+  era: "NÛJEN",
+  quote: [
+    "Piştî wî, min tîpên wî hînî zarokan kir —",
+    "da ku deng nemire.",
+  ],
+  source: "ji jiyana wê",
+};
+
+/** connector between the two coda stations */
+export const codaSideIntro = "û li kêleka wî —";

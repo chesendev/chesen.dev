@@ -6,7 +6,15 @@ import { EASE, Reveal } from "../../components/motion";
 import { heroGlyphs } from "./glyphs";
 import { KurdiSection } from "./KurdiSections";
 import styles from "./kurdi.module.css";
-import { coda, codaIntro, heroes, ui, type Hero21 } from "./strings";
+import {
+  coda,
+  codaIntro,
+  codaSide,
+  codaSideIntro,
+  heroes,
+  ui,
+  type Hero21,
+} from "./strings";
 
 /**
  * BÎR — the twenty-one. One for each ray of the sun.
@@ -137,6 +145,43 @@ export function Bir() {
             style={{ color: "var(--xani-dim)" }}
           >
             {coda.line}
+          </p>
+
+          {/* û li kêleka wî — Rewşen, who kept the flame */}
+          <p
+            className="mt-10 font-mono text-[11px] tracking-[0.2em]"
+            style={{ color: "var(--hevsel-400)" }}
+          >
+            {codaSideIntro}
+          </p>
+          <div className="mt-6 flex items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => setOpenHero(codaSide)}
+              aria-label={`Gotina ${codaSide.name}`}
+              className="cursor-pointer transition-transform hover:scale-110 focus-visible:scale-110"
+              style={{ color: "var(--hevsel-400)" }}
+            >
+              {(() => {
+                const SideGlyph = heroGlyphs[codaSide.id];
+                return <SideGlyph className="h-6 w-6" />;
+              })()}
+            </button>
+            <h3
+              className="font-display text-xl tracking-tight sm:text-2xl"
+              style={{ color: "var(--sor)" }}
+            >
+              {codaSide.name}
+            </h3>
+            <span className="font-mono text-xs" style={{ color: "var(--zer)" }}>
+              {codaSide.date}
+            </span>
+          </div>
+          <p
+            className="mx-auto mt-2 max-w-md text-sm leading-relaxed"
+            style={{ color: "var(--xani-dim)" }}
+          >
+            {codaSide.line}
           </p>
         </div>
       </Reveal>

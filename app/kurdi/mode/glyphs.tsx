@@ -264,4 +264,12 @@ export const heroGlyphs: Record<string, (props: P) => React.ReactElement> = {
       <path d="M12 9v5M10 21h4" />
     </G>
   ),
+  // Rewşen — a candle: she kept the flame
+  rewsen: (p) => (
+    <G {...p}>
+      <path d="M12 2l2 3-2 3-2-3 2-3Z" />
+      <path d="M12 8v3M9.5 11h5v10h-5V11Z" />
+      <path d="M7 21h10" />
+    </G>
+  ),
 };

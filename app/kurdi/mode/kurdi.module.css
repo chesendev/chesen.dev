@@ -1,0 +1,211 @@
+/*
+ * MODA KURDÎ — the triad lives in the type, not the canvas.
+ * Internal naming carries the pantheon: display scale "rustem",
+ * body voice "xani", spacing "zagros", the green scale "hevsel".
+ */
+
+.root {
+  /* SOR — ember at text sizes, crimson only at display scale */
+  --sor: #e05a41;
+  --sor-display: #cf3b2c;
+  /* KESK — the hevsel scale: clear green that holds on basalt */
+  --hevsel-300: #7fdfa6;
+  --hevsel-400: #4cc981;
+  --hevsel-500: #2fa465;
+  /* ZER */
+  --zer: #febd11;
+  /* body voice */
+  --xani: #f3ead9;
+  --xani-dim: #b8ac95;
+  --xani-faint: #7d7261;
+  /* the stone of Sur */
+  --basalt: #0d0b09;
+  --basalt-2: #14110e;
+  --limestone: rgba(232, 224, 205, 0.5);
+  /* zagros spacing */
+  --zagros-1: 0.5rem;
+  --zagros-2: 1rem;
+  --zagros-3: 2rem;
+  --zagros-4: 4rem;
+  --zagros-5: 7rem;
+  /* rustem display scale */
+  --rustem-1: clamp(3rem, 10.5vw, 8rem);
+  --rustem-2: clamp(1.9rem, 4.5vw, 2.75rem);
+
+  background: var(--basalt);
+  color: var(--xani);
+  min-height: 100svh;
+
+  /* kilim lattice — beneath everything, ≤8% presence */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23f3ead9' stroke-opacity='0.05' stroke-width='1'%3E%3Cpath d='M28 0 56 28 28 56 0 28Z'/%3E%3Cpath d='M28 14 42 28 28 42 14 28Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.root ::selection {
+  background: var(--zer);
+  color: var(--basalt);
+}
+
+/* ————— ablaq: basalt/limestone masonry as hairline banding ————— */
+.ablaq {
+  height: 3px;
+  border: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--limestone) 0 14px,
+    transparent 14px 18px,
+    var(--basalt-2) 18px 32px,
+    transparent 32px 36px
+  );
+  opacity: 0.5;
+}
+
+/* ————— dicle: links underlined by the flowing river ————— */
+.dicle {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='4' viewBox='0 0 14 4'%3E%3Cpath d='M0 2c1.75-1.6 3.5-1.6 5.25 0s3.5 1.6 5.25 0 2.33-1.07 3.5 0' fill='none' stroke='%234cc981' stroke-width='1'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 14px 4px;
+  padding-bottom: 5px;
+  text-decoration: none;
+}
+
+.dicle:hover {
+  color: var(--sor); /* sor text over kesk water — the pairing that means alive */
+  animation: dicle-flow 1.2s linear infinite;
+}
+
+@keyframes dicle-flow {
+  to {
+    background-position: 14px 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dicle:hover {
+    animation: none;
+  }
+}
+
+/* ————— bîr: the spine of the Dicle ————— */
+.spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 7px;
+  width: 12px;
+}
+
+@media (min-width: 768px) {
+  .spine {
+    left: 50%;
+    margin-left: -6px;
+  }
+}
+
+.spinePath {
+  stroke: var(--hevsel-500);
+  stroke-opacity: 0.55;
+  stroke-dasharray: 8 6;
+  animation: spine-flow 30s linear infinite;
+}
+
+@keyframes spine-flow {
+  to {
+    stroke-dashoffset: -280;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinePath {
+    animation: none;
+  }
+}
+
+/* ————— eggs ————— */
+
+/* amedspor tifo: sor+kesk sweep, no zer */
+.tifo {
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.tifoPanel {
+  position: absolute;
+  inset: -20%;
+  transform: translateX(-130%) skewX(-14deg);
+}
+
+.tifoPanel:first-child {
+  background: rgba(207, 59, 44, 0.92);
+  animation: tifo-sweep 1.5s cubic-bezier(0.7, 0, 0.2, 1) forwards;
+}
+
+.tifoPanel:nth-child(2) {
+  background: rgba(31, 138, 82, 0.92);
+  animation: tifo-sweep 1.5s cubic-bezier(0.7, 0, 0.2, 1) 0.08s forwards;
+}
+
+@keyframes tifo-sweep {
+  40% {
+    transform: translateX(0) skewX(-14deg);
+  }
+  60% {
+    transform: translateX(0) skewX(-14deg);
+  }
+  100% {
+    transform: translateX(130%) skewX(-14deg);
+  }
+}
+
+.tifoChant {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  color: var(--xani);
+  opacity: 0;
+  animation: chant 1.5s ease 0.15s forwards;
+}
+
+@keyframes chant {
+  25%,
+  65% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tifoPanel {
+    animation: none;
+    transform: none;
+    opacity: 0.9;
+  }
+  .tifoChant {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* newroz spark */
+.spark {
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  pointer-events: none;
+}
+
+/* date-aware: on 21 Adarê the year burns zer */
+.newrozYear {
+  color: var(--zer);
+  text-shadow: 0 0 14px rgba(254, 189, 17, 0.65);
+}

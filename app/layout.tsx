@@ -5,13 +5,13 @@ import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "swap",
 });
 
@@ -96,7 +96,16 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        {/* restore display mode before first paint — zero flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem('chesen:mode')==='kurdi'){var d=document.documentElement;d.dataset.mode='kurdi';d.lang='kmr';}}catch(e){}`,
+          }}
+        />
+      </head>
       <body
         className="min-h-screen bg-background text-foreground antialiased"
         suppressHydrationWarning
@@ -105,6 +114,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
+        <div id="mode-veil" aria-hidden="true" />
         {children}
       </body>
     </html>

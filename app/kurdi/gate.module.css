@@ -1,0 +1,127 @@
+.stage {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  overflow: hidden;
+  background: #0d0b09;
+  cursor: pointer;
+}
+
+/* dawn light: red → white → green, the one overt tricolor moment */
+.sky {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: sky 1.4s ease-out forwards;
+  background:
+    radial-gradient(
+      120% 90% at 50% 100%,
+      rgba(214, 60, 42, 0.5) 0%,
+      rgba(243, 234, 217, 0.22) 38%,
+      rgba(63, 178, 112, 0.28) 62%,
+      transparent 78%
+    );
+}
+
+@keyframes sky {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+.sun {
+  position: absolute;
+  left: 50%;
+  bottom: 26%;
+  width: 72px;
+  height: 72px;
+  margin-left: -36px;
+  color: #febd11;
+  transform: translateY(140px) scale(0.6);
+  opacity: 0;
+  animation: sunrise 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  filter: drop-shadow(0 0 24px rgba(254, 189, 17, 0.55));
+}
+
+@keyframes sunrise {
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.ridge {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(30px);
+  animation: ridge 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.ridgeMid {
+  animation-delay: 0.08s;
+}
+.ridgeFar {
+  animation-delay: 0.16s;
+}
+
+@keyframes ridge {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* 22 Rêbendanê — four lamps on the horizon. No caption. */
+.lamps {
+  position: absolute;
+  left: 50%;
+  bottom: 31%;
+  display: flex;
+  gap: 26px;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: lamps 1s ease-out 0.5s forwards;
+}
+
+.lamps span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #febd11;
+  box-shadow: 0 0 10px rgba(254, 189, 17, 0.9);
+}
+
+@keyframes lamps {
+  to {
+    opacity: 1;
+  }
+}
+
+.hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: rgba(243, 234, 217, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sky,
+  .sun,
+  .ridge,
+  .lamps {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

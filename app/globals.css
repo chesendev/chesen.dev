@@ -26,6 +26,56 @@
   --accent-rgb: 52, 211, 153;
 }
 
+/*
+ * Alternate display mode base tokens. Only surface colors live here so the
+ * first paint is correct; everything else arrives with the mode's own chunk.
+ */
+[data-mode="kurdi"] {
+  --color-background: #0d0b09;
+  --color-foreground: #f3ead9;
+  --color-accent: #febd11;
+  --accent-rgb: 254, 189, 17;
+}
+
+/* Covers the swap window between first paint and the mode chunk mounting. */
+#mode-veil {
+  display: none;
+}
+
+[data-mode="kurdi"]:not([data-kurdi-ready]) #mode-veil {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--color-background);
+}
+
+[data-mode="kurdi"]:not([data-kurdi-ready]) #mode-veil::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  animation: veil-pulse 1s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-mode="kurdi"]:not([data-kurdi-ready]) #mode-veil::after {
+    animation: none;
+  }
+}
+
+@keyframes veil-pulse {
+  50% {
+    transform: scale(1.8);
+    opacity: 0.55;
+  }
+}
+
 html {
   color-scheme: dark;
   scroll-behavior: smooth;

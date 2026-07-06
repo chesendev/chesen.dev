@@ -9,12 +9,7 @@ import { KurdiContact } from "./KurdiContact";
 import { KurdiFx } from "./KurdiFx";
 import { KurdiNav } from "./KurdiNav";
 import { KurdiPalette } from "./KurdiPalette";
-import {
-  KurdiAbout,
-  KurdiHero,
-  KurdiNow,
-  KurdiWork,
-} from "./KurdiSections";
+import { KurdiAbout, KurdiHero } from "./KurdiSections";
 import styles from "./kurdi.module.css";
 
 declare global {
@@ -117,7 +112,7 @@ export default function KurdiSite({
     <div className={styles.root} id="site-root">
       <div className={styles.ribbon} aria-hidden="true" />
       <a
-        href="#work"
+        href="#bir"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:border focus:bg-[var(--basalt)] focus:px-4 focus:py-2 focus:font-mono focus:text-sm"
         style={{ borderColor: "var(--zer)" }}
       >
@@ -126,10 +121,8 @@ export default function KurdiSite({
       <KurdiNav />
       <main>
         <KurdiHero newroz={newroz} />
-        <KurdiWork />
         <Bir />
         <KurdiAbout />
-        <KurdiNow />
         <KurdiContact />
       </main>
       <KurdiPalette />

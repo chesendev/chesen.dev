@@ -85,13 +85,6 @@ export function CommandPalette() {
         keywords: "profile career",
         run: () => window.open(socials.linkedin.url, "_blank", "noopener"),
       },
-      {
-        id: "link-whatsapp",
-        group: "Links",
-        label: "WhatsApp",
-        keywords: "message chat phone",
-        run: () => window.open(socials.whatsapp.url, "_blank", "noopener"),
-      },
     ],
     [],
   );

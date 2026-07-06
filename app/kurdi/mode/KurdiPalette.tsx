@@ -90,13 +90,6 @@ export function KurdiPalette() {
         keywords: "profîl kar",
         run: () => window.open(socials.linkedin.url, "_blank", "noopener"),
       },
-      {
-        id: "link-whatsapp",
-        group: "links",
-        label: "WhatsApp",
-        keywords: "peyam telefon",
-        run: () => window.open(socials.whatsapp.url, "_blank", "noopener"),
-      },
     ],
     [router],
   );

@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { profile, socials } from "../../../content/site";
-import { GithubIcon, LinkedinIcon, WhatsappIcon } from "../../components/icons";
+import { GithubIcon, LinkedinIcon } from "../../components/icons";
 import { EASE, Reveal } from "../../components/motion";
 import { Beats } from "./KurdiSections";
 import { heroGlyphs, SurHorizon } from "./glyphs";
@@ -16,7 +16,6 @@ const KawaHammer = heroGlyphs.kawa;
 const links = [
   { ...socials.github, icon: GithubIcon },
   { ...socials.linkedin, icon: LinkedinIcon },
-  { ...socials.whatsapp, icon: WhatsappIcon },
 ];
 
 export function KurdiContact() {
@@ -42,7 +41,7 @@ export function KurdiContact() {
             <span className="font-mono text-xs" style={{ color: "var(--zer)" }}>
               {ui.sections.contact.index}
             </span>
-            <Beats active={4} />
+            <Beats active={2} />
             <h2
               className="font-display text-3xl tracking-tight sm:text-4xl"
               style={{ color: "var(--sor-display)" }}
@@ -106,7 +105,6 @@ export function KurdiContact() {
           <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-sm">
             {links.map((link) => {
               const Icon = link.icon;
-              const whatsapp = link.label === "WhatsApp";
               return (
                 <a
                   key={link.label}
@@ -119,22 +117,13 @@ export function KurdiContact() {
                   <span className="inline-flex items-center gap-2">
                     <Icon
                       className="h-4 w-4"
-                      style={{
-                        color: whatsapp ? "#25D366" : "var(--hevsel-400)",
-                      }}
+                      style={{ color: "var(--hevsel-400)" }}
                     />
                     {link.label}
                   </span>
                 </a>
               );
             })}
-            <a
-              href={`tel:${profile.phoneTel}`}
-              className={styles.dicle}
-              style={{ color: "var(--xani-faint)" }}
-            >
-              {profile.phoneDisplay}
-            </a>
           </div>
         </Reveal>
 

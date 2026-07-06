@@ -62,7 +62,7 @@ export default function OpengraphImage() {
             {profile.positioning}
           </span>
           <span style={{ color: "#71717a", fontSize: 22 }}>
-            C# / .NET · Playwright
+            C# / .NET · Backend
           </span>
         </div>
       </div>

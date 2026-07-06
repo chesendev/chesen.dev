@@ -3,13 +3,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { profile, socials } from "../../content/site";
-import { GithubIcon, LinkedinIcon, WhatsappIcon } from "./icons";
+import { GithubIcon, LinkedinIcon } from "./icons";
 import { EASE, Magnetic, Reveal } from "./motion";
 
 const links = [
   { ...socials.github, icon: GithubIcon },
   { ...socials.linkedin, icon: LinkedinIcon },
-  { ...socials.whatsapp, icon: WhatsappIcon },
 ];
 
 export function Contact() {
@@ -76,7 +75,6 @@ export function Contact() {
           <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-sm">
             {links.map((link) => {
               const Icon = link.icon;
-              const whatsapp = link.label === "WhatsApp";
               return (
                 <a
                   key={link.label}
@@ -85,13 +83,7 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 text-zinc-400 transition-colors hover:text-foreground"
                 >
-                  <Icon
-                    className={`h-4 w-4 transition-colors ${
-                      whatsapp
-                        ? "text-[#25D366]"
-                        : "text-zinc-500 group-hover:text-accent"
-                    }`}
-                  />
+                  <Icon className="h-4 w-4 text-zinc-500 transition-colors group-hover:text-accent" />
                   {link.label}
                   <span className="text-zinc-700 transition-colors group-hover:text-accent">
                     ↗
@@ -99,12 +91,6 @@ export function Contact() {
                 </a>
               );
             })}
-            <a
-              href={`tel:${profile.phoneTel}`}
-              className="text-zinc-500 transition-colors hover:text-foreground"
-            >
-              {profile.phoneDisplay}
-            </a>
           </div>
         </Reveal>
 

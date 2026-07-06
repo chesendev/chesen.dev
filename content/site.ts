@@ -11,16 +11,15 @@ export const profile = {
   domain: "chesen.dev",
   url: "https://chesen.dev",
   kicker: "Chesen · Software Engineering Student",
-  positioning: "I make browsers do the boring work — reliably.",
+  positioning:
+    "Software engineering student, building toward a US backend career.",
   supporting:
-    "C#/.NET by conviction, Playwright by necessity. Automation that survives contact with the real web, built through a Türkiye→Texas dual degree.",
+    "C#/.NET at the core, exploring blockchain along the way. Learning in public through a Türkiye → Texas dual degree, one repo at a time.",
   availability: "Available for collaboration",
   location: "Elazığ ⇄ Huntsville, TX",
   email: "mehdiosmanoglu@icloud.com",
-  phoneDisplay: "+90 545 823 03 21",
-  phoneTel: "+905458230321",
   description:
-    "Mehdi Osmanoğlu (Chesen) — software engineering dual-degree student building browser automation in C#/.NET and Python that survives the real web.",
+    "Mehdi Osmanoğlu (Chesen) — software engineering dual-degree student building toward a US backend career. C#/.NET at the core, exploring blockchain along the way.",
 } as const;
 
 export const socials = {
@@ -29,7 +28,6 @@ export const socials = {
     label: "LinkedIn",
     url: "https://www.linkedin.com/in/mehdiosmanoglu",
   },
-  whatsapp: { label: "WhatsApp", url: "https://wa.me/905458230321" },
 } as const;
 
 export type Project = {
@@ -80,7 +78,7 @@ export const projects: Project[] = [
 export const about = {
   paragraphs: [
     "I'm a software engineering student on a dual-diploma track: Fırat University in Türkiye, with the Texas years at Sam Houston State University ahead. The focus is simple — C#/.NET fundamentals practiced daily, not collected as résumé keywords.",
-    "Before I wrote my first line of C#, I built a philosophy media brand to roughly 600K followers and cut professional video in Premiere and After Effects. That's not a detour — it's why my automation ships with taste and my demos tell a story.",
+    "Before I wrote my first line of C#, I built a philosophy media brand to roughly 600K followers and cut professional video in Premiere and After Effects. That's not a detour — it's why my work ships with taste and my demos tell a story.",
   ],
   languages: [
     { name: "Kurdish", level: "native" },
@@ -93,10 +91,8 @@ export const about = {
     "C++",
     "Python",
     "TypeScript",
-    "Playwright",
     "SQL",
     "Git & GitHub",
-    "SUI Move",
     "Avalanche",
     "Premiere Pro",
     "After Effects",
@@ -104,7 +100,6 @@ export const about = {
   ],
   log: [
     { year: "2026", entry: "ODTÜ Blockchain Days — attendee" },
-    { year: "2026", entry: "21-Day SUI Move Challenge — in progress" },
     { year: "2026", entry: "C# Technical Challenge — in progress" },
     { year: "2025", entry: "DevFest Istanbul — attendee" },
     { year: "····", entry: "Dual diploma, Fırat ⇄ SHSU — ongoing" },
@@ -112,10 +107,9 @@ export const about = {
 } as const;
 
 export const now = [
-  "Deep in C#/.NET — building automation tooling that outgrows the word “script”.",
-  "Structured practice on the Exercism C# track, daily.",
-  "Working through the 21-Day SUI Move Challenge.",
-  "Digging into the Avalanche ecosystem — docs, consensus, small experiments.",
+  "Avalanche Team1 Collaborator — contributing to the ecosystem.",
+  "Joined the Fırat University Blockchain Incubator Program.",
+  "Deepening C#/.NET fundamentals — daily practice on the Exercism C# track.",
   "Preparing for the Texas leg of the dual degree at SHSU.",
 ] as const;
 

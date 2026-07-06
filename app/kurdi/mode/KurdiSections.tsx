@@ -1,18 +1,16 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
-import { about as aboutEn } from "../../../content/site";
 import { EASE, Reveal } from "../../components/motion";
-import { TenArches } from "./glyphs";
 import styles from "./kurdi.module.css";
-import { projects, ui } from "./strings";
+import { ui } from "./strings";
 
 /* ————— shared shell: index, section beats, title ————— */
 /* One dot per section; the fourfold Çarçira rhythm lives in the hero hairlines. */
 
-export function Beats({ active, total = 5 }: { active: number; total?: number }) {
+export function Beats({ active, total = 3 }: { active: number; total?: number }) {
   return (
     <span aria-hidden="true" className="flex items-center gap-1.5">
       {Array.from({ length: total }, (_, i) => (
@@ -191,35 +189,17 @@ export function KurdiHero({ newroz }: { newroz: boolean }) {
           <span className="block italic">Osmanoğlu</span>
         </motion.h1>
 
-        <motion.p
-          {...fade(0.35)}
-          className="mt-10 max-w-xl text-balance text-lg leading-relaxed sm:text-xl"
-          style={{ color: "var(--xani)" }}
-        >
-          {ui.hero.positioning}
-        </motion.p>
-
-        <motion.p
-          {...fade(0.45)}
-          className="mt-3 max-w-xl text-pretty text-sm leading-relaxed sm:text-base"
-          style={{ color: "var(--xani-dim)" }}
-        >
-          {ui.hero.supporting}
-        </motion.p>
-
         <motion.div
-          {...fade(0.55)}
+          {...fade(0.35)}
           className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4"
         >
           <a
-            href="#work"
+            href="#bir"
             className="group inline-flex items-center gap-3 border px-6 py-3 font-mono text-sm transition-colors"
-            style={
-              {
-                borderColor: "var(--hevsel-500)",
-                color: "var(--xani)",
-              } as CSSProperties
-            }
+            style={{
+              borderColor: "var(--hevsel-500)",
+              color: "var(--xani)",
+            }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = "var(--hevsel-500)";
               e.currentTarget.style.color = "var(--basalt)";
@@ -251,31 +231,6 @@ export function KurdiHero({ newroz }: { newroz: boolean }) {
           </span>
         </motion.div>
 
-        <motion.div
-          {...fade(0.65)}
-          className="mt-20 flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-[0.2em]"
-          style={{ color: "var(--xani-faint)" }}
-        >
-          <span className="relative flex h-1.5 w-1.5">
-            <span
-              className="absolute h-full w-full animate-ping rounded-full opacity-70 motion-reduce:animate-none"
-              style={{ background: "var(--hevsel-400)" }}
-            />
-            <span
-              className="relative h-1.5 w-1.5 rounded-full"
-              style={{
-                background: "var(--hevsel-400)",
-                boxShadow: "0 0 8px rgba(76,201,129,0.8)",
-              }}
-            />
-          </span>
-          <span style={{ color: "var(--xani-dim)" }}>
-            {ui.hero.availability}
-          </span>
-          <span style={{ color: "var(--xani-faint)" }}>/</span>
-          <span>{ui.hero.location}</span>
-        </motion.div>
-
         {/* the fourfold rhythm — four hairlines. unlabeled. */}
         <div
           aria-hidden="true"
@@ -294,74 +249,7 @@ export function KurdiHero({ newroz }: { newroz: boolean }) {
   );
 }
 
-/* ————— selected work ————— */
-
-const FACETS = [
-  { key: "problem", label: ui.facets.problem },
-  { key: "approach", label: ui.facets.approach },
-  { key: "learned", label: ui.facets.learned },
-] as const;
-
-export function KurdiWork() {
-  return (
-    <KurdiSection
-      id="work"
-      index={ui.sections.work.index}
-      title={ui.sections.work.title}
-    >
-      {/* Pira Dehderî — ten arches over the Dicle */}
-      <div
-        className="mb-16 w-full max-w-sm"
-        style={{ color: "var(--hevsel-500)", opacity: 0.6 }}
-      >
-        <TenArches className="h-4 w-full" />
-      </div>
-
-      <div className="space-y-20 sm:space-y-24">
-        {projects.map((project, i) => (
-          <Reveal key={project.index} delay={i * 0.05}>
-            <article className="grid gap-8 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-              <div>
-                <p
-                  className="font-mono text-xs"
-                  style={{ color: "var(--xani-faint)" }}
-                >
-                  {project.index} · {project.stack}
-                </p>
-                <h3
-                  className="mt-3 font-display text-3xl leading-tight tracking-tight sm:text-4xl"
-                  style={{ color: "var(--sor)" }}
-                >
-                  {project.name}
-                </h3>
-              </div>
-              <dl className="space-y-6">
-                {FACETS.map((facet) => (
-                  <div key={facet.key}>
-                    <dt
-                      className="font-mono text-[10px] uppercase tracking-[0.25em]"
-                      style={{ color: "var(--hevsel-400)" }}
-                    >
-                      {facet.label}
-                    </dt>
-                    <dd
-                      className="mt-1.5 max-w-prose text-[15px] leading-relaxed"
-                      style={{ color: "var(--xani)" }}
-                    >
-                      {project[facet.key]}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </article>
-          </Reveal>
-        ))}
-      </div>
-    </KurdiSection>
-  );
-}
-
-/* ————— about + çîrok ————— */
+/* ————— derbarê: çîrok û ziman ————— */
 
 export function KurdiAbout() {
   return (
@@ -372,148 +260,57 @@ export function KurdiAbout() {
     >
       <div className="grid gap-14 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
         <Reveal>
-          <div className="space-y-6">
-            {ui.about.paragraphs.map((paragraph) => (
+          {/* Çîrok — the block the public site doesn't have */}
+          <figure
+            className="border-l-2 py-1 pl-6"
+            style={{ borderColor: "var(--hevsel-500)" }}
+          >
+            <figcaption
+              className="mb-3 font-mono text-[10px] uppercase tracking-[0.25em]"
+              style={{ color: "var(--zer)" }}
+            >
+              {ui.about.cirokTitle}
+            </figcaption>
+            {ui.about.cirok.map((line) => (
               <p
-                key={paragraph.slice(0, 24)}
-                className="max-w-prose text-[15px] leading-relaxed sm:text-base"
+                key={line}
+                className="font-display text-lg italic leading-relaxed sm:text-xl"
                 style={{ color: "var(--xani)" }}
               >
-                {paragraph}
+                {line}
               </p>
             ))}
-
-            {/* Çîrok — the block the public site doesn't have */}
-            <figure
-              className="mt-10 border-l-2 py-1 pl-6"
-              style={{ borderColor: "var(--hevsel-500)" }}
-            >
-              <figcaption
-                className="mb-3 font-mono text-[10px] uppercase tracking-[0.25em]"
-                style={{ color: "var(--zer)" }}
-              >
-                {ui.about.cirokTitle}
-              </figcaption>
-              {ui.about.cirok.map((line) => (
-                <p
-                  key={line}
-                  className="font-display text-lg italic leading-relaxed sm:text-xl"
-                  style={{ color: "var(--xani)" }}
-                >
-                  {line}
-                </p>
-              ))}
-            </figure>
-          </div>
+          </figure>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="space-y-10 font-mono text-sm">
-            <div>
-              <h3
-                className="mb-3 text-[10px] uppercase tracking-[0.25em]"
-                style={{ color: "var(--hevsel-400)" }}
-              >
-                {ui.about.languagesTitle}
-              </h3>
-              <ul className="space-y-1.5">
-                {ui.about.languages.map((lang) => (
-                  <li
-                    key={lang.name}
-                    className="flex items-baseline justify-between gap-4"
-                    style={{ color: "var(--xani)" }}
+          <div className="font-mono text-sm">
+            <h3
+              className="mb-3 text-[10px] uppercase tracking-[0.25em]"
+              style={{ color: "var(--hevsel-400)" }}
+            >
+              {ui.about.languagesTitle}
+            </h3>
+            <ul className="space-y-1.5">
+              {ui.about.languages.map((lang) => (
+                <li
+                  key={lang.name}
+                  className="flex items-baseline justify-between gap-4"
+                  style={{ color: "var(--xani)" }}
+                >
+                  <span>{lang.name}</span>
+                  <span
+                    className="text-xs"
+                    style={{ color: "var(--xani-faint)" }}
                   >
-                    <span>{lang.name}</span>
-                    <span
-                      className="text-xs"
-                      style={{ color: "var(--xani-faint)" }}
-                    >
-                      {lang.level}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3
-                className="mb-3 text-[10px] uppercase tracking-[0.25em]"
-                style={{ color: "var(--hevsel-400)" }}
-              >
-                {ui.about.toolboxTitle}
-              </h3>
-              <ul
-                className="flex flex-wrap gap-x-4 gap-y-1.5"
-                style={{ color: "var(--xani)" }}
-              >
-                {aboutEn.toolbox.map((tool) => (
-                  <li key={tool}>{tool}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3
-                className="mb-3 text-[10px] uppercase tracking-[0.25em]"
-                style={{ color: "var(--hevsel-400)" }}
-              >
-                {ui.about.logTitle}
-              </h3>
-              <ul className="space-y-1.5">
-                {ui.about.log.map((item) => (
-                  <li
-                    key={item.entry}
-                    className="flex items-baseline gap-4"
-                    style={{ color: "var(--xani)" }}
-                  >
-                    <span
-                      className="shrink-0 text-xs"
-                      style={{ color: "var(--zer)" }}
-                    >
-                      {item.year}
-                    </span>
-                    <span>{item.entry}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                    {lang.level}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </Reveal>
       </div>
-    </KurdiSection>
-  );
-}
-
-/* ————— now ————— */
-
-export function KurdiNow() {
-  return (
-    <KurdiSection
-      id="now"
-      index={ui.sections.now.index}
-      title={ui.sections.now.title}
-    >
-      <Reveal>
-        <ul className="max-w-2xl space-y-4">
-          {ui.now.map((item) => (
-            <li key={item} className="flex gap-4">
-              <span
-                aria-hidden="true"
-                className="mt-[3px] shrink-0 font-mono text-xs"
-                style={{ color: "var(--zer)" }}
-              >
-                ▸
-              </span>
-              <p
-                className="text-[15px] leading-relaxed sm:text-base"
-                style={{ color: "var(--xani)" }}
-              >
-                {item}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </Reveal>
     </KurdiSection>
   );
 }

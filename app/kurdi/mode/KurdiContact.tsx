@@ -7,11 +7,9 @@ import { profile, socials } from "../../../content/site";
 import { GithubIcon, LinkedinIcon } from "../../components/icons";
 import { EASE, Reveal } from "../../components/motion";
 import { Beats } from "./KurdiSections";
-import { heroGlyphs, SurHorizon } from "./glyphs";
+import { SurHorizon } from "./glyphs";
 import styles from "./kurdi.module.css";
 import { isNewroz, kurdishDate, kurdishYear, ui } from "./strings";
-
-const KawaHammer = heroGlyphs.kawa;
 
 const links = [
   { ...socials.github, icon: GithubIcon },
@@ -156,14 +154,7 @@ export function KurdiContact() {
               {ui.contact.exit}
             </Link>
           </p>
-          <p className="inline-flex items-center gap-2">
-            {ui.contact.builtBy}
-            {/* Kawa's hammer, once, outside the Bîr — Çekiçle Felsefe */}
-            <KawaHammer
-              className="h-4 w-4"
-              style={{ color: "var(--zer)" }}
-            />
-          </p>
+          <p>{ui.contact.builtBy}</p>
         </div>
       </div>
 

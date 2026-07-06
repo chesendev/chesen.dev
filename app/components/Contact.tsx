@@ -30,7 +30,7 @@ export function Contact() {
       <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 sm:py-32">
         <Reveal>
           <div className="mb-14 flex items-baseline gap-4">
-            <span className="font-mono text-xs text-accent">04</span>
+            <span className="font-mono text-xs text-accent">03</span>
             <h2 className="font-display text-3xl tracking-tight sm:text-4xl">
               Contact
             </h2>

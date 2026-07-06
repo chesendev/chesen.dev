@@ -6,14 +6,13 @@ import { Hero } from "./components/Hero";
 import { ModeGate } from "./components/ModeGate";
 import { Nav } from "./components/Nav";
 import { Now } from "./components/Now";
-import { Work } from "./components/Work";
 
 export default function Home() {
   return (
     <ModeGate>
       <div id="site-root">
         <a
-          href="#work"
+          href="#about"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:border focus:border-accent focus:bg-background focus:px-4 focus:py-2 focus:font-mono focus:text-sm"
         >
           Skip to content
@@ -21,7 +20,6 @@ export default function Home() {
         <Nav />
         <main>
           <Hero />
-          <Work />
           <About />
           <Now />
           <Contact />

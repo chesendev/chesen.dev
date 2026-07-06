@@ -4,7 +4,7 @@ import { Section } from "./Section";
 
 export function Now() {
   return (
-    <Section id="now" index="03" title="Now">
+    <Section id="now" index="02" title="Now">
       <Reveal>
         <ul className="max-w-2xl space-y-4">
           {now.map((item) => (

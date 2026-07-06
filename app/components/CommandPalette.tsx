@@ -82,7 +82,7 @@ export function CommandPalette() {
         id: "link-linkedin",
         group: "Links",
         label: "LinkedIn",
-        keywords: "profile career",
+        keywords: "profile network",
         run: () => window.open(socials.linkedin.url, "_blank", "noopener"),
       },
     ],

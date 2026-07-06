@@ -9,8 +9,8 @@
 > and every word on the page lives in one typed content file.
 
 Personal site of **Mehdi "Chesen" Osmanoğlu** — software engineering dual-degree
-student (Fırat University ⇄ Sam Houston State University) building toward a US
-backend career: C#/.NET at the core, exploring blockchain along the way.
+student (Fırat University ⇄ Sam Houston State University). C#/.NET at the core,
+exploring blockchain along the way.
 
 ## Stack
 

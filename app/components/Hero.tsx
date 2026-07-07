@@ -100,7 +100,7 @@ export function Hero() {
         >
           <Magnetic>
             <a
-              href="#now"
+              href="#work"
               className="group inline-flex items-center gap-3 border border-accent/60 px-6 py-3 font-mono text-sm text-foreground transition-colors hover:bg-accent hover:text-background"
             >
               See what I&apos;m building

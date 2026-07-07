@@ -4,7 +4,7 @@ import { Section } from "./Section";
 
 export function About() {
   return (
-    <Section id="about" index="01" title="About">
+    <Section id="about" index="02" title="About">
       <div className="grid gap-14 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
         <Reveal>
           <div className="space-y-6">

@@ -30,6 +30,34 @@ export const socials = {
   },
 } as const;
 
+export type Project = {
+  index: string;
+  name: string;
+  stack: string;
+  link?: { label: string; url: string };
+  problem: string;
+  approach: string;
+  learned: string;
+};
+
+export const projects: Project[] = [
+  {
+    index: "01",
+    name: "chesen.dev",
+    stack: "Next.js · TypeScript · Tailwind CSS",
+    link: {
+      label: "github.com/chesendev/chesen.dev",
+      url: "https://github.com/chesendev/chesen.dev",
+    },
+    problem:
+      "A portfolio has one job: prove you can build. A template proves the opposite. So the site itself became the first project — designed, built, and deployed from zero, in public.",
+    approach:
+      "Next.js 16 with a typed content layer as the single source of truth, a hand-drawn canvas signal field, a keyboard-driven ⌘K palette, and a generated metadata suite — statically exported and shipped to GitHub Pages through a CI pipeline.",
+    learned:
+      "Deploys fail in ways tutorials don't cover. When a CI helper silently overrode my Next config and flattened the routes, reading CDN cache headers taught me more than any doc did.",
+  },
+];
+
 export const about = {
   paragraphs: [
     "I'm a software engineering student on a dual-diploma track: Fırat University in Türkiye, with the Texas years at Sam Houston State University ahead. The focus is simple — C#/.NET fundamentals practiced daily, not collected as résumé keywords.",
@@ -66,6 +94,7 @@ export const now = [
 ] as const;
 
 export const nav = [
+  { href: "#work", label: "Work" },
   { href: "#about", label: "About" },
   { href: "#now", label: "Now" },
   { href: "#contact", label: "Contact" },

@@ -79,6 +79,7 @@ export const about = {
     "Photoshop",
   ],
   log: [
+    { year: "2026", entry: "Avalanche Team1 — collaborator" },
     { year: "2026", entry: "ODTÜ Blockchain Days — attendee" },
     { year: "2026", entry: "exercism.io — C# track, daily practice" },
     { year: "2025", entry: "DevFest Istanbul — attendee" },

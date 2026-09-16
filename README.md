@@ -8,8 +8,8 @@
 > The site behaves like an instrument: ⌘K drives it, the konami code overclocks it,
 > and every word on the page lives in one typed content file.
 
-Personal site of **Mehdi "Chesen" Osmanoğlu** — software engineering dual-degree
-student (Fırat University ⇄ Sam Houston State University). C#/.NET at the core,
+Personal site of **Mehdi "Chesen" Osmanoğlu** — computer science student
+(Dokuz Eylül University, İzmir · 2025–2030). C#/.NET at the core,
 exploring blockchain along the way.
 
 ## Stack

@@ -10,16 +10,18 @@ export const profile = {
   handle: "Chesen",
   domain: "chesen.dev",
   url: "https://chesen.dev",
-  kicker: "Chesen · Software Engineering Student",
+  title: "Computer Science Student",
+  university: "Dokuz Eylül University",
+  kicker: "Chesen · Computer Science Student",
   positioning:
-    "Software engineering student, building my backend foundations in public.",
+    "Computer science student, building my backend foundations in public.",
   supporting:
-    "C#/.NET at the core, exploring blockchain along the way. A Türkiye → Texas dual degree, one repo at a time.",
+    "C#/.NET at the core, exploring blockchain along the way. Computer Science at Dokuz Eylül University, one repo at a time.",
   availability: "Available for collaboration",
-  location: "Elazığ ⇄ Huntsville, TX",
+  location: "İzmir, Türkiye",
   email: "mehdiosmanoglu@icloud.com",
   description:
-    "Mehdi Osmanoğlu (Chesen) — software engineering dual-degree student. C#/.NET at the core, exploring blockchain along the way.",
+    "Mehdi Osmanoğlu (Chesen) — computer science student at Dokuz Eylül University. C#/.NET at the core, exploring blockchain along the way.",
 } as const;
 
 export const socials = {
@@ -60,7 +62,7 @@ export const projects: Project[] = [
 
 export const about = {
   paragraphs: [
-    "I'm a software engineering student on a dual-diploma track: Fırat University in Türkiye, with the Texas years at Sam Houston State University ahead. The focus is simple — C#/.NET fundamentals practiced daily, not collected as résumé keywords.",
+    "I'm studying Computer Science at Dokuz Eylül University in İzmir — the 2025–2030 run, start to finish. The focus is simple: C#/.NET fundamentals practiced daily, not collected as résumé keywords.",
   ],
   languages: [
     { name: "Kurdish", level: "native" },
@@ -83,15 +85,14 @@ export const about = {
     { year: "2026", entry: "ODTÜ Blockchain Days — attendee" },
     { year: "2026", entry: "exercism.io — C# track, daily practice" },
     { year: "2025", entry: "DevFest Istanbul — attendee" },
-    { year: "····", entry: "Dual diploma, Fırat ⇄ SHSU — ongoing" },
+    { year: "····", entry: "Computer Science, Dokuz Eylül University — 2025–2030" },
   ],
 } as const;
 
 export const now = [
   "Avalanche Team1 Collaborator — contributing to the ecosystem.",
-  "Joined the Fırat University Blockchain Incubator Program.",
+  "Working through the Computer Science program at Dokuz Eylül University.",
   "Deepening C#/.NET fundamentals — daily practice on the Exercism C# track.",
-  "Preparing for the Texas leg of the dual degree at SHSU.",
 ] as const;
 
 export const nav = [

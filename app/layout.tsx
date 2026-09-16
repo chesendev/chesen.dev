@@ -26,27 +26,27 @@ const instrument = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(profile.url),
   title: {
-    default: `${profile.name} — Software Engineering Student`,
+    default: `${profile.name} — ${profile.title}`,
     template: `%s · ${profile.name}`,
   },
   description: profile.description,
   keywords: [
     profile.name,
     profile.handle,
-    "Software Engineering Student",
+    profile.title,
+    "Computer Science",
     "Backend Development",
     "C#",
     ".NET",
     "Python",
     "Blockchain",
     "Avalanche",
-    "Fırat University",
-    "Sam Houston State University",
+    profile.university,
   ],
   authors: [{ name: profile.name, url: profile.url }],
   creator: profile.name,
   openGraph: {
-    title: `${profile.name} — Software Engineering Student`,
+    title: `${profile.name} — ${profile.title}`,
     description: profile.positioning,
     url: profile.url,
     siteName: profile.domain,
@@ -68,9 +68,10 @@ const personJsonLd = {
   alternateName: profile.handle,
   url: profile.url,
   email: `mailto:${profile.email}`,
-  jobTitle: "Software Engineering Student",
+  jobTitle: profile.title,
   description: profile.description,
   knowsAbout: [
+    "Computer Science",
     "C#",
     ".NET",
     "Python",
@@ -80,10 +81,7 @@ const personJsonLd = {
     "Avalanche",
   ],
   knowsLanguage: about.languages.map((lang) => lang.name),
-  alumniOf: [
-    { "@type": "CollegeOrUniversity", name: "Fırat University" },
-    { "@type": "CollegeOrUniversity", name: "Sam Houston State University" },
-  ],
+  alumniOf: [{ "@type": "CollegeOrUniversity", name: profile.university }],
   sameAs: [socials.github.url, socials.linkedin.url],
 };
 

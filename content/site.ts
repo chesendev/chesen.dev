@@ -19,7 +19,7 @@ export const profile = {
     "C#/.NET at the core, exploring blockchain along the way. Computer Science at Dokuz Eylül University, one repo at a time.",
   availability: "Available for collaboration",
   location: "İzmir, Türkiye",
-  email: "mehdiosmanoglu@icloud.com",
+  email: "hello@chesen.dev",
   description:
     "Mehdi Osmanoğlu (Chesen) — computer science student at Dokuz Eylül University. C#/.NET at the core, exploring blockchain along the way.",
 } as const;

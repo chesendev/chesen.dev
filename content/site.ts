@@ -81,6 +81,8 @@ export const about = {
     "Photoshop",
   ],
   log: [
+    { year: "2026", entry: "DevFest İzmir'26 — staff" },
+    { year: "2026", entry: "GDG İzmir — social media team member" },
     { year: "2026", entry: "Avalanche Team1 — collaborator" },
     { year: "2026", entry: "ODTÜ Blockchain Days — attendee" },
     { year: "2026", entry: "exercism.io — C# track, daily practice" },
@@ -90,6 +92,7 @@ export const about = {
 } as const;
 
 export const now = [
+  "GDG İzmir Social Media Team — staff at DevFest İzmir'26.",
   "Avalanche Team1 Collaborator — contributing to the ecosystem.",
   "Working through the Computer Science program at Dokuz Eylül University.",
   "Deepening C#/.NET fundamentals — daily practice on the Exercism C# track.",

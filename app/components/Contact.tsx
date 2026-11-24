@@ -27,19 +27,19 @@ export function Contact() {
 
   return (
     <footer id="contact" className="border-t border-zinc-800/70">
-      <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:px-10 sm:py-32">
+      <div className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 sm:py-28 lg:border-x lg:border-zinc-800/40">
         <Reveal>
-          <div className="mb-14 flex items-baseline gap-4">
-            <span className="font-mono text-xs text-accent">04</span>
-            <h2 className="font-display text-3xl tracking-tight sm:text-4xl">
+          <div className="mb-10 flex items-baseline gap-4 sm:mb-14">
+            <span className="font-mono text-xs text-accent">03</span>
+            <h2 className="font-heading text-2xl tracking-[-0.03em] sm:text-3xl">
               Contact
             </h2>
           </div>
         </Reveal>
 
         <Reveal delay={0.05}>
-          <p className="font-display text-[clamp(2rem,6vw,4rem)] leading-tight tracking-tight">
-            Say <span className="italic text-accent">hello.</span>
+          <p className="font-heading text-[clamp(2rem,6vw,4rem)] leading-tight tracking-[-0.04em]">
+            Say <span className="text-accent">hello.</span>
           </p>
 
           <Magnetic strength={0.15}>

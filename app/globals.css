@@ -13,6 +13,16 @@
 }
 
 /*
+ * Public-site headings. A separate utility (not --font-display) so the
+ * alternate mode keeps its serif untouched.
+ */
+@utility font-heading {
+  font-family: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  font-stretch: var(--heading-width, 125%);
+  font-weight: 400;
+}
+
+/*
  * --accent-rgb feeds canvas + inline alpha effects, so one attribute
  * swap on <html> (overdrive) repaints everything including the signal field.
  */

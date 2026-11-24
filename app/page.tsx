@@ -5,7 +5,6 @@ import { Fx } from "./components/Fx";
 import { Hero } from "./components/Hero";
 import { ModeGate } from "./components/ModeGate";
 import { Nav } from "./components/Nav";
-import { Now } from "./components/Now";
 import { Work } from "./components/Work";
 
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
           <Hero />
           <Work />
           <About />
-          <Now />
           <Contact />
         </main>
         <CommandPalette />

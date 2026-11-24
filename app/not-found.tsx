@@ -8,7 +8,7 @@ export default function NotFound() {
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">
           404
         </p>
-        <h1 className="mt-6 font-display text-4xl tracking-tight sm:text-6xl">
+        <h1 className="mt-6 font-heading text-3xl tracking-[-0.035em] sm:text-5xl">
           This route doesn&apos;t exist.
         </h1>
         <p className="mt-4 max-w-md text-zinc-400">

@@ -11,15 +11,21 @@ const FACETS = [
 export function Work() {
   return (
     <Section id="work" index="01" title="Selected Work">
-      <div className="space-y-20 sm:space-y-24">
+      <div>
         {projects.map((project, i) => (
-          <Reveal key={project.index} delay={i * 0.05}>
+          <Reveal
+            key={project.index}
+            delay={i * 0.05}
+            className={
+              i > 0 ? "mt-16 border-t border-zinc-800/70 pt-16" : undefined
+            }
+          >
             <article className="group grid gap-8 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
               <div>
                 <p className="font-mono text-xs text-zinc-500">
                   {project.index} · {project.stack}
                 </p>
-                <h3 className="mt-3 font-display text-3xl leading-tight tracking-tight sm:text-4xl">
+                <h3 className="mt-3 font-heading text-2xl leading-tight tracking-[-0.03em] sm:text-3xl">
                   <span className="bg-gradient-to-r from-accent to-accent bg-[length:0%_1px] bg-left-bottom bg-no-repeat pb-1 transition-[background-size] duration-500 group-hover:bg-[length:100%_1px]">
                     {project.name}
                   </span>

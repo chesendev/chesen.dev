@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Archivo, Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { about, profile, socials } from "../content/site";
 import "./globals.css";
 
@@ -11,6 +11,14 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+});
+
+// Public-site headings: Archivo on its width axis (set to expanded in CSS).
+const archivo = Archivo({
+  variable: "--font-archivo",
+  axes: ["wdth"],
   subsets: ["latin", "latin-ext"],
   display: "swap",
 });
@@ -93,7 +101,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${instrument.variable}`}
       suppressHydrationWarning
     >
       <head>

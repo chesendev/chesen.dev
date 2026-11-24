@@ -42,7 +42,17 @@ export function KurdiFx() {
       buffer = (buffer + e.key.toLowerCase()).slice(-12);
       if (buffer.endsWith("newroz")) {
         buffer = "";
-        setEmbers(true);
+        const reduced = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        // Reduced motion skips the fire and goes straight to the toast.
+        if (reduced) {
+          window.dispatchEvent(
+            new CustomEvent("chesen:toast", { detail: ui.eggs.newrozToast }),
+          );
+        } else {
+          setEmbers(true);
+        }
       } else if (buffer.endsWith("amedspor")) {
         buffer = "";
         setTifo(true);
@@ -56,16 +66,6 @@ export function KurdiFx() {
   // Kawa's fire: one anvil-strike spark, then embers rising
   useEffect(() => {
     if (!embers) return;
-    const reduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (reduced) {
-      window.dispatchEvent(
-        new CustomEvent("chesen:toast", { detail: ui.eggs.newrozToast }),
-      );
-      setEmbers(false);
-      return;
-    }
 
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");

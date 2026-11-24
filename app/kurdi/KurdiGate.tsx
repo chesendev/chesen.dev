@@ -65,11 +65,14 @@ export function KurdiGate() {
       finish();
       return;
     }
-    setDawn(true);
+    // Whether to play depends on client-only state (mode, reduced motion),
+    // so the stage mounts on the first frame after hydration.
+    const frame = requestAnimationFrame(() => setDawn(true));
     const timer = setTimeout(finish, 1500);
     const onKey = () => finish();
     window.addEventListener("keydown", onKey);
     return () => {
+      cancelAnimationFrame(frame);
       clearTimeout(timer);
       window.removeEventListener("keydown", onKey);
     };

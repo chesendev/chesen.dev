@@ -132,8 +132,6 @@ export function KurdiPalette() {
     if (open) inputRef.current?.focus();
   }, [open]);
 
-  useEffect(() => setSelected(0), [query]);
-
   const onInputKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Escape") {
       e.preventDefault();
@@ -197,7 +195,10 @@ export function KurdiPalette() {
               <input
                 ref={inputRef}
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  setSelected(0);
+                }}
                 onKeyDown={onInputKeyDown}
                 role="combobox"
                 aria-expanded="true"

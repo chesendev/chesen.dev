@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 /**
  * Renders the public site (server-rendered children) unless the alternate
@@ -14,6 +14,14 @@ const KurdiSite = dynamic(() => import("../kurdi/mode/KurdiSite"), {
   loading: () => null, // #mode-veil covers this window via CSS
 });
 
+// <html data-mode> is set before hydration by the inline script in layout.tsx
+// and only changes through a full route change, so there is nothing to
+// subscribe to. The server snapshot (null) keeps hydration on the public tree.
+const subscribe = () => () => {};
+const readMode = () =>
+  document.documentElement.dataset.mode === "kurdi" ? "kurdi" : "public";
+const readServerMode = () => null;
+
 export function ModeGate({
   children,
   view = "home",
@@ -21,13 +29,7 @@ export function ModeGate({
   children: ReactNode;
   view?: "home" | "not-found";
 }) {
-  const [mode, setMode] = useState<"public" | "kurdi" | null>(null);
-
-  useEffect(() => {
-    setMode(
-      document.documentElement.dataset.mode === "kurdi" ? "kurdi" : "public",
-    );
-  }, []);
+  const mode = useSyncExternalStore(subscribe, readMode, readServerMode);
 
   if (mode === "kurdi") return <KurdiSite view={view} />;
   return <>{children}</>;
